@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+if which fish; then chsh -s `which fish`; fi
