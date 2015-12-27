@@ -1,0 +1,7 @@
+[core]
+	editor = vim
+[user]
+	name = Nathaniel Hill
+	email = nhill@gunayaladirect.com
+[push]
+	default = simple

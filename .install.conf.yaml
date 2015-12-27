@@ -1,0 +1,15 @@
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.dotfiles: ''
+    ~/.gitconfig: gitconfig
+#    ~/.gitignore_global: gitignore_global
+#    ~/.gnupg/gpg.conf:
+#      create: true
+#      path: gpg.conf
+    ~/.tmux.conf: tmux.conf
+#    ~/.vim: vim/
+    ~/.vimrc: vimrc
+
+- shell:
+   - git submodule update --init --recursive
