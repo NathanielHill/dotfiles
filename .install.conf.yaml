@@ -6,7 +6,17 @@
 #    ~/.gitignore_global: gitignore_global
     ~/.config/fish/config.fish:
       create: true
-      path: config.fish
+      path: fish/config.fish
+    ~/.config/fish/functions/df.fish:
+       create: true
+       path: fish/functions/df.fish
+    ~/.config/fish/functions/du.fish: fish/functions/du.fish
+    ~/.config/fish/functions/golive.fish: fish/functions/golive.fish
+    ~/.config/fish/functions/ls.fish: fish/functions/ls.fish
+    ~/.config/fish/functions/mutt.fish: fish/functions/mutt.fish
+    ~/.config/fish/functions/ping.fish: fish/functions/ping.fish
+    ~/.config/fish/functions/ps.fish: fish/functions/ps.fish
+    ~/.config/fish/functions/tmux.fish: fish/functions/tmux.fish
     ~/.tmux.conf: tmux.conf
 #    ~/.vim: vim/
     ~/.vimrc: vimrc
