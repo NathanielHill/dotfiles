@@ -20,6 +20,11 @@
     ~/.tmux.conf: tmux.conf
 #    ~/.vim: vim/
     ~/.vimrc: vimrc
+    ~/.inputrc: inputrc
+    ~/.gitignore: gitignore
+    ~/.bashrc: bashrc
+    ~/.bash_profile: bash_profile
+    ~/.bash_logout: bash_logout
 
 - shell:
    - git submodule update --init --recursive
