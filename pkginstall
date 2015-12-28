@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 
-if which fish; then chsh -s `which fish`; fi
+#if which fish; then chsh -s `which fish`; fi
+
+#install all packages enumerated in ./pkglist
+while read package;
+do sudo apt-get -y install $package;
+done < pkglist
