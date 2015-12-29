@@ -1,0 +1,4 @@
+# dconf dump / > settings.dconf
+# dconf load / < settings.dcong
+
+# fc-cache -f -v
