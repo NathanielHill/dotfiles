@@ -74,14 +74,14 @@ ino <left> <Nop>
 ino <right> <Nop>
 ino <up> <Nop>
 
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+" set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 
 " Always show statusline
 set laststatus=2
 
 " Use 256 colours (Use this setting only if your terminal supports 256
 " colours)
-set t_Co=256
+" set t_Co=256
 
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
