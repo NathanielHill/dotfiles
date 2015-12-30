@@ -21,7 +21,7 @@
     ~/.config/fish/functions/ps.fish: config/fish/functions/ps.fish
     ~/.config/fish/functions/tmux.fish: config/fish/functions/tmux.fish
     ~/.tmux.conf: tmux.conf
-#    ~/.vim: vim/
+    ~/.vim: vim/
     ~/.vimrc: vimrc
     ~/.inputrc: inputrc
     ~/.gitignore: gitignore
