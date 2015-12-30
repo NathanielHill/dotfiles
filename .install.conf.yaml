@@ -28,9 +28,7 @@
     ~/.bashrc: bashrc
     ~/.bash_profile: bash_profile
     ~/.bash_logout: bash_logout
-    ~/.config/powerline/powerline.conf:
-       create: true
-       path: config/powerline/powerline.conf
+    ~/.config/powerline: config/powerline/
 
 - shell:
    - git submodule update --init --recursive
