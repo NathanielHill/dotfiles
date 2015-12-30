@@ -5,6 +5,7 @@ python del powerline_setup
 " Pathogen
 execute pathogen#infect()
 call pathogen#helptags() " generate helptags for everything in 'runtimepath'
+
 syntax on
 filetype plugin indent on
 set autoindent
@@ -81,7 +82,7 @@ ino <left> <Nop>
 ino <right> <Nop>
 ino <up> <Nop>
 
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+" set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 
 " Always show statusline
 set laststatus=2
