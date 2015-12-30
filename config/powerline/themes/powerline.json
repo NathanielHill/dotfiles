@@ -47,12 +47,20 @@
 		"powerline.segments.common.net.hostname": {
 			"before": " "
 		},
+		"powerline.segments.common.players.now_playing": {
+			"args": {
+				"state_symbols": {
+					"fallback": "♫",
+					"play":     "▶",
+					"pause":    "▮▮",
+					"stop":     "■"
+				}
+			}
+		},
 		"powerline.segments.common.bat.battery": {
 			"args": {
 				"full_heart": "♥",
-				"empty_heart": "♥",
-				"online": "⚡︎",
-				"offline": " "
+				"empty_heart": "♥"
 			}
 		},
 		"powerline.segments.common.sys.uptime": {
@@ -100,15 +108,15 @@
 					"S":  "S·LINE",
 					"^S": "S·BLCK",
 					"i":  "INSERT",
-					"R":  "RPLACE",
-					"Rv": "V·RPLC",
+					"R":  "REPLACE",
+					"Rv": "V·RPLCE",
 					"c":  "COMMND",
-					"cv": "VIM·EX",
-					"ce": "NRM·EX",
+					"cv": "VIM EX",
+					"ce": "EX",
 					"r":  "PROMPT",
-					"rm": "-MORE-",
-					"r?": "CNFIRM",
-					"!":  "!SHELL"
+					"rm": "MORE",
+					"r?": "CONFIRM",
+					"!":  "SHELL"
 				}
 			}
 		},
