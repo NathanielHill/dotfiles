@@ -5,6 +5,7 @@ python del powerline_setup
 " Pathogen
 execute pathogen#infect()
 call pathogen#helptags() " generate helptags for everything in 'runtimepath'
+
 syntax on
 filetype plugin indent on
 set autoindent
@@ -26,12 +27,14 @@ map  N <Plug>(easymotion-prev)
 let g:solarized_termtrans=1
 let g:solarized_contrast="high"
 
-let hour = strftime("%H")
-if 6 <= hour && hour < 18
-  set background=light
-else
-  set background=dark
-endif
+" let hour = strftime("%H")
+" if 6 <= hour && hour < 18
+"  set background=light
+" else
+"  set background=dark
+" endif
+
+set background=dark
 
 colorscheme solarized
 
@@ -81,7 +84,7 @@ ino <left> <Nop>
 ino <right> <Nop>
 ino <up> <Nop>
 
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+" set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 
 " Always show statusline
 set laststatus=2

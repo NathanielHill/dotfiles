@@ -1,4 +1,5 @@
 # VIM
 .*.swo
 .*.swp
+*.swp
 *.pyc
