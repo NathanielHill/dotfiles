@@ -2,3 +2,12 @@
 # dconf load / < settings.dcong
 
 # fc-cache -f -v
+#
+#
+# Install google-chrome-stable by downloading .deb from google (could automate this)
+#
+# Open 'ccsm' and setup ring switcher
+#
+# Figure out why ccsm settings aren't imported from dconf load :(
+#
+# Next need to figure out python/virtualenv setup
