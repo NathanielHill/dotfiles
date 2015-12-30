@@ -11,3 +11,5 @@
 # Figure out why ccsm settings aren't imported from dconf load :(
 #
 # Next need to figure out python/virtualenv setup
+#
+# Also, SSH private keys need to be copied, figure out secure way to automate this
