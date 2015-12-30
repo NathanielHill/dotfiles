@@ -25,7 +25,14 @@ map  N <Plug>(easymotion-prev)
 " let g:solarized_visibility="high"
 let g:solarized_termtrans=1
 let g:solarized_contrast="high"
-set background=dark
+
+let hour = strftime("%H")
+if 6 <= hour && hour < 18
+  set background=light
+else
+  set background=dark
+endif
+
 colorscheme solarized
 
 set encoding=utf8
