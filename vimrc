@@ -1,6 +1,6 @@
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
 
 " Pathogen
 execute pathogen#infect()
@@ -84,7 +84,7 @@ ino <left> <Nop>
 ino <right> <Nop>
 ino <up> <Nop>
 
-" set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+set rtp+=/home/nhill/.local/lib/python2.7/site-packages/bindings/vim
 
 " Always show statusline
 set laststatus=2
