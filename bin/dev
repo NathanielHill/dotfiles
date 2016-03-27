@@ -1,5 +1,0 @@
-#!/bin/sh
-
-tmux new-session -d 'Development Environment'
-tmux new window 'ping'
-tmux attach-session -d 'Development Environment'

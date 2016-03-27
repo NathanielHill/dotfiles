@@ -22,3 +22,5 @@ set __fish_git_prompt_show_informative_status 'yes'
 
 #set fish_function_path $fish_function_path "/usr/local/lib/python2.7/dist-packages/powerline/bindings/fish"
 #powerline-setup
+#
+set -x EDITOR vim
