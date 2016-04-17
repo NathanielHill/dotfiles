@@ -33,7 +33,6 @@
     ~/.local/bin/dark: bin/dark
     ~/.local/bin/gterm-light: bin/gterm-light
     ~/.local/bin/gterm-dark: bin/gterm-dark
-    ~/.local/bin/dev: bin/dev
 
 - shell:
    - git submodule update --init --recursive
