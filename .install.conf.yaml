@@ -29,10 +29,7 @@
     ~/.bash_profile: bash_profile
     ~/.bash_logout: bash_logout
     ~/.config/powerline: config/powerline/
-    ~/.local/bin/light: bin/light
-    ~/.local/bin/dark: bin/dark
-    ~/.local/bin/gterm-light: bin/gterm-light
-    ~/.local/bin/gterm-dark: bin/gterm-dark
+    ~/.local/bin: bin/
 
 - shell:
    - git submodule update --init --recursive
