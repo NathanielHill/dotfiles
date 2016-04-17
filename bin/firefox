@@ -1,0 +1,3 @@
+#!/bin/sh
+
+nice -10 /usr/bin/firefox $@

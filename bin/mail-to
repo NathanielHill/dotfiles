@@ -1,0 +1,8 @@
+#!/bin/bash
+
+a=$@
+a=`echo $a | sed 's/^\///'|sed 's/^\///'|sed 's/^\///'`
+#echo $a
+
+#/usr/bin/gnome-terminal -e 'echo $a|more'
+/usr/bin/gnome-terminal -e "'mutt' -F ~/.mutt/muttrc-mailto $a"
