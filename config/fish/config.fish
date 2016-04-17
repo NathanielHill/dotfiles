@@ -44,6 +44,8 @@ function fish_prompt --description 'Write out the prompt'
 
 	echo -n -s "$USER" @ "$__fish_prompt_hostname" ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal) "$suffix "
 
+	set -x PROJECT_HOME ~/Projects/
+
 	if set -q VIRTUAL_ENV
 		echo -n -s (set_color -b blue white) "(" (basename "$VIRTUAL_ENV") ")" (set_color normal) " "
 	end
