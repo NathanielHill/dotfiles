@@ -111,9 +111,15 @@ let NERDTreeIgnore = ['\.pyc$','__pycache__','__init__']
 function! NERDTreeStartUp()
 	if getcwd() =~ "/home/nhill/Projects"
 		NERDTree
-		let @a = ":NERDTreeFocusPOBjouBP"
-		normal @a
-		let @a = ''
+		if getcwd() =~ "/home/nhill/Projects/arclight"
+			let @a = ":NERDTreeFocusPOBjouBP"
+			normal @a
+			let @a = ''
+		endif
+		" why doesn't this work?
+		let @b = ":NERDTreeFocus"
+		normal @b
+		let @b = ''
 	endif
 endfunction
 autocmd VimEnter * call NERDTreeStartUp()
