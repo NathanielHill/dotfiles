@@ -24,6 +24,7 @@
     ~/.config/fish/completions/tmuxinator.fish: config/fish/completions/tmuxinator.fish
     ~/.config/fish/completions/mux.fish: config/fish/completions/mux.fish
     ~/.tmux.conf: tmux.conf
+    ~/.tmuxinator: tmuxinator/
     ~/.vim: vim/
     ~/.vimrc: vimrc
     ~/.inputrc: inputrc
