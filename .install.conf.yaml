@@ -28,6 +28,7 @@
     ~/.vim: vim/
     ~/.vimrc: vimrc
     ~/.inputrc: inputrc
+    ~/.toprc: toprc
     ~/.gitignore: gitignore
     ~/.bashrc: bashrc
     ~/.bash_profile: bash_profile
