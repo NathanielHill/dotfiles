@@ -1,6 +1,8 @@
-" python from powerline.vim import setup as powerline_setup
-" python powerline_setup()
-" python del powerline_setup
+set rtp+=/home/nhill/.local/lib/python2.7/site-packages/bindings/vim
+
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 " Pathogen
 execute pathogen#infect()
@@ -21,6 +23,8 @@ map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
+
+set scrolloff=999
 
 " Solarized settings
 " let g:solarized_visibility="high"
@@ -84,7 +88,6 @@ ino <left> <Nop>
 ino <right> <Nop>
 ino <up> <Nop>
 
-set rtp+=/home/nhill/.local/lib/python2.7/site-packages/bindings/vim
 
 " Always show statusline
 set laststatus=2
@@ -106,9 +109,9 @@ function! NERDTreeStartUp()
 	" wincmd p
 	" Open default NERDTree directories (uses macro)
 
-	if getcwd() == "/var/www/gyd"
+	if getcwd() =~ "/home/nhill/Projects"
 		NERDTree
-		let @a = ":NERDTreeFocusP2jOkOP"
+		let @a = ":NERDTreeFocusP3jokokoP"
 		normal @a
 		let @a = ''
 	endif
