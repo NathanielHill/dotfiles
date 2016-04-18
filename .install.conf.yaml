@@ -31,7 +31,7 @@
     ~/.bashrc: bashrc
     ~/.bash_profile: bash_profile
     ~/.bash_logout: bash_logout
-    ~/.config/powerline: config/powerline/
+    ~/.config/powerline/config.json: config/powerline/config.json
     ~/.local/bin: bin/
 
 - shell:
