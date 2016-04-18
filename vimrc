@@ -17,12 +17,14 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 inoremap <C-n> ñ
+
 " Easy motion mapings
-nmap s <Plug>(easymotion-prefix)
+nmap s <Plug>(easymotion-s)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
+let g:EasyMotion_smartcase = 1
 
 set scrolloff=999
 
@@ -104,17 +106,14 @@ set noexpandtab
 set shiftwidth=3
 set tabstop=3
 
-function! NERDTreeStartUp()
-	" if argc() == 0
-	" wincmd p
-	" Open default NERDTree directories (uses macro)
+let NERDTreeIgnore = ['\.pyc$','__pycache__','__init__']
 
+function! NERDTreeStartUp()
 	if getcwd() =~ "/home/nhill/Projects"
 		NERDTree
-		let @a = ":NERDTreeFocusP3jokokoP"
+		let @a = ":NERDTreeFocusPOBjouBP"
 		normal @a
 		let @a = ''
 	endif
-	" end
 endfunction
 autocmd VimEnter * call NERDTreeStartUp()
