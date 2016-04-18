@@ -20,6 +20,9 @@
     ~/.config/fish/functions/ping.fish: config/fish/functions/ping.fish
     ~/.config/fish/functions/ps.fish: config/fish/functions/ps.fish
     ~/.config/fish/functions/tmux.fish: config/fish/functions/tmux.fish
+    ~/.config/fish/functions/mux.fish: config/fish/functions/mux.fish
+    ~/.config/fish/completions/tmuxinator.fish: config/fish/completions/tmuxinator.fish
+    ~/.config/fish/completions/mux.fish: config/fish/completions/mux.fish
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim/
     ~/.vimrc: vimrc
