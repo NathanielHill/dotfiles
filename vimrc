@@ -123,3 +123,24 @@ function! NERDTreeStartUp()
 	endif
 endfunction
 autocmd VimEnter * call NERDTreeStartUp()
+
+" Autocomplete
+
+" NEOCOMPLCACHE SETTINGS
+let g:neocomplcache_enable_at_startup = 1 
+imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : 
+let g:neocomplcache_force_overwrite_completefunc = 1
+if !exists('g:neocomplcache_omni_functions')
+  let g:neocomplcache_omni_functions = {}
+endif
+if !exists('g:neocomplcache_force_omni_patterns')
+  let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_force_overwrite_completefunc = 1
+let g:neocomplcache_force_omni_patterns['python'] = '[^. \t]\.\w*'
+set ofu=syntaxcomplete#Complete
+au FileType python set omnifunc=pythoncomplete#Complete
+au FileType python let b:did_ftplugin = 1
+" Vim-jedi settings
+let g:jedi#popup_on_dot = 0
