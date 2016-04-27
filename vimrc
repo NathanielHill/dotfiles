@@ -29,7 +29,7 @@ let g:EasyMotion_smartcase = 1
 set scrolloff=999
 
 " Solarized settings
-" let g:solarized_visibility="high"
+" let g:solarized_visibility="low"
 let g:solarized_termtrans=1
 let g:solarized_contrast="high"
 
@@ -144,3 +144,5 @@ au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python let b:did_ftplugin = 1
 " Vim-jedi settings
 let g:jedi#popup_on_dot = 0
+
+set foldmethod=indent

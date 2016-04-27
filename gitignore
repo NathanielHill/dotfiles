@@ -2,4 +2,7 @@
 .*.swo
 .*.swp
 *.swp
+*.swo
+
+# Python
 *.pyc

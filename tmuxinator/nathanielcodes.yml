@@ -7,7 +7,7 @@ root: ~/Projects/nathanielcodes
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-# pre: sudo /etc/rc.d/mysqld start
+pre: cd ~/Projects/nathanielcodes
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -28,10 +28,10 @@ root: ~/Projects/nathanielcodes
 # post: tmux -CC attach -t nathanielcodes
 
 windows:
-  - editor:
-      layout: main-vertical
+  - vim: vim
+  - server:
+      layout: main-horizontal
       panes:
-        - vim
-        - guard
-  - server: bundle exec rails s
-  - logs: tail -f log/development.log
+        - ./manage.py runserver
+        -
+  -
