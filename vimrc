@@ -1,8 +1,8 @@
 set rtp+=/home/nhill/.local/lib/python2.7/site-packages/bindings/vim
 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
 " Pathogen
 execute pathogen#infect()
@@ -146,3 +146,6 @@ au FileType python let b:did_ftplugin = 1
 let g:jedi#popup_on_dot = 0
 
 set foldmethod=indent
+
+autocmd Syntax css,c,cpp,vim,xml,html,py,js setlocal foldmethod=indent
+autocmd Syntax css,c,cpp,vim,xml,html,py,js normal zR

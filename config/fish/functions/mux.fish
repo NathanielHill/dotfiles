@@ -1,6 +1,6 @@
 function mux
 	set -l CWD $PWD
 	cd ~
-	command tmuxinator $argv; 
+	/usr/local/bin/tmuxinator $argv; 
 	cd $CWD
 end

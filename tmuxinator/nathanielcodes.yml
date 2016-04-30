@@ -7,7 +7,7 @@ root: ~/Projects/nathanielcodes
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-pre: cd ~/Projects/nathanielcodes
+#pre: cd ~/Projects/nathanielcodes
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -32,6 +32,6 @@ windows:
   - server:
       layout: main-horizontal
       panes:
-        - ./manage.py runserver
-        -
-  -
+        - ./manage.py runserver 8001
+        - 
+  - fish:
