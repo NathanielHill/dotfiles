@@ -52,6 +52,9 @@ call <SID>HtmlIndentPush('md-sidenav')
 call <SID>HtmlIndentPush('md-list')
 call <SID>HtmlIndentPush('md-list-item')
 call <SID>HtmlIndentPush('md-icon')
+call <SID>HtmlIndentPush('md-fab-speed-dial')
+call <SID>HtmlIndentPush('md-fab-trigger')
+call <SID>HtmlIndentPush('md-fab-actions')
 
 
 " Custom tags above :) -Nathaniel Hill
