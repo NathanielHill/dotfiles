@@ -44,6 +44,18 @@ call <SID>HtmlIndentPush('nav')
 call <SID>HtmlIndentPush('main')
 call <SID>HtmlIndentPush('section')
 call <SID>HtmlIndentPush('footer')
+call <SID>HtmlIndentPush('md-toolbar')
+call <SID>HtmlIndentPush('md-dialog')
+call <SID>HtmlIndentPush('md-button')
+call <SID>HtmlIndentPush('md-content')
+call <SID>HtmlIndentPush('md-sidenav')
+call <SID>HtmlIndentPush('md-list')
+call <SID>HtmlIndentPush('md-list-item')
+call <SID>HtmlIndentPush('md-icon')
+call <SID>HtmlIndentPush('md-fab-speed-dial')
+call <SID>HtmlIndentPush('md-fab-trigger')
+call <SID>HtmlIndentPush('md-fab-actions')
+
 
 " Custom tags above :) -Nathaniel Hill
 

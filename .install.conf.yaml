@@ -23,6 +23,7 @@
     ~/.config/fish/functions/mux.fish: config/fish/functions/mux.fish
     ~/.config/fish/completions/tmuxinator.fish: config/fish/completions/tmuxinator.fish
     ~/.config/fish/completions/mux.fish: config/fish/completions/mux.fish
+    ~/.config/fish/functions/song.fish: config/fish/functions/song.fish
     ~/.tmux.conf: tmux.conf
     ~/.tmuxinator: tmuxinator/
     ~/.vim: vim/
