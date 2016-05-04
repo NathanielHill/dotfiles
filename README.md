@@ -8,8 +8,11 @@ This repo does all sorts of dangerous things as root via my custon installer she
 on an Ubuntu machine:
 
 `sudo apt-get install git`
+
 `git clone http://github.com/NathanielHill/dotfiles.git`
+
 `cd dotfiles`
+
 `./install`
 
 
