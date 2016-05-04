@@ -39,6 +39,10 @@ dconf load / < settings.dconf
 # Rebuilding font cache
 fc-cache -f -v
 
+# Adding git "Origin" to github for this repo
+# SSH Private key needs to be copied for this to work
+git remote set-url origin nhill@github.com:/NathanielHill/dotfiles.git
+
 
 echo ""
 echo "If everything worked, try logging in/out for new shell and GUI settings :)"
