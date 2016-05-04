@@ -5,7 +5,7 @@ This repo does all sorts of dangerous things as root via my custon installer she
 
 ## To install
 
-on an Ubuntu machine:
+on a fresh Ubuntu machine:
 
 `sudo apt-get install git`
 
