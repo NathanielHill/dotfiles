@@ -7,10 +7,10 @@ This repo does all sorts of dangerous things as root via my custon installer she
 
 on an Ubuntu machine:
 
-sudo apt-get install git
-git clone http://github.com/NathanielHill/dotfiles.git
-cd dotfiles
-./install
+`sudo apt-get install git`
+`git clone http://github.com/NathanielHill/dotfiles.git`
+`cd dotfiles`
+`./install`
 
 
 Then copy your ssh private key into ~/.ssh and you're good to go
