@@ -41,7 +41,7 @@ fc-cache -f -v
 
 # Adding git "Origin" to github for this repo
 # SSH Private key needs to be copied for this to work
-git remote set-url origin nhill@github.com:/NathanielHill/dotfiles.git
+git remote set-url origin git@github.com:/NathanielHill/dotfiles.git
 
 # Remove some useless empty directories Ubuntu puts in ~
 rmdir ~/Public
