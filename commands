@@ -1,17 +1,10 @@
-# dconf dump / > settings.dconf
-# dconf load / < settings.dcong
-
-# fc-cache -f -v
-#
-#
-# Install google-chrome-stable by downloading .deb from google (could automate this)
-#
 # Open 'ccsm' and setup ring switcher
 #
 # Figure out why ccsm settings aren't imported from dconf load :(
 #
-# Next need to figure out python/virtualenv setup
 #
 # Also, SSH private keys need to be copied, figure out secure way to automate this
 #
 # Also, can we automatically set git remote for this repo to use ssh?
+#
+# Slingscold, once it's released for 16.04

@@ -1,2 +1,3 @@
 jedi
 powerline-status
+virtualfish

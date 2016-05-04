@@ -1,3 +1,68 @@
+[de/mh21/indicator-multiload/general]
+background-color='traditional:background'
+color-scheme='traditional'
+settings-version=uint32 3
+
+[de/mh21/indicator-multiload/graphs/cpu/cpu1]
+color='traditional:cpu1'
+
+[de/mh21/indicator-multiload/graphs/cpu/cpu4]
+color='traditional:cpu4'
+
+[de/mh21/indicator-multiload/graphs/cpu/cpu3]
+color='traditional:cpu3'
+
+[de/mh21/indicator-multiload/graphs/cpu/cpu2]
+color='traditional:cpu2'
+
+[de/mh21/indicator-multiload/graphs/swap/swap1]
+color='traditional:swap1'
+
+[de/mh21/indicator-multiload/graphs/swap]
+enabled=true
+
+[de/mh21/indicator-multiload/graphs/net/net1]
+color='traditional:net1'
+
+[de/mh21/indicator-multiload/graphs/net/net3]
+color='traditional:net3'
+
+[de/mh21/indicator-multiload/graphs/net]
+enabled=true
+
+[de/mh21/indicator-multiload/graphs/net/net2]
+color='traditional:net2'
+
+[de/mh21/indicator-multiload/graphs/disk/disk2]
+color='traditional:disk2'
+
+[de/mh21/indicator-multiload/graphs/disk/disk1]
+color='traditional:disk1'
+
+[de/mh21/indicator-multiload/graphs/disk]
+enabled=true
+
+[de/mh21/indicator-multiload/graphs/load/load1]
+color='traditional:load1'
+
+[de/mh21/indicator-multiload/graphs/load]
+enabled=true
+
+[de/mh21/indicator-multiload/graphs/mem/mem4]
+color='traditional:mem4'
+
+[de/mh21/indicator-multiload/graphs/mem/mem3]
+color='traditional:mem3'
+
+[de/mh21/indicator-multiload/graphs/mem/mem2]
+color='traditional:mem2'
+
+[de/mh21/indicator-multiload/graphs/mem]
+enabled=true
+
+[de/mh21/indicator-multiload/graphs/mem/mem1]
+color='traditional:mem1'
+
 [org/gnome/settings-daemon/plugins/power]
 sleep-inactive-battery-timeout=300
 
@@ -7,6 +72,7 @@ www='<Super>s'
 terminal='<Super>a'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='Super_L'
 command='slingscold'
 name='Slingscold'
 
@@ -125,6 +191,9 @@ default-visible-columns=['name', 'size', 'type', 'date_modified']
 use-tree-view=true
 default-column-order=['name', 'size', 'type', 'date_modified', 'date_accessed', 'owner', 'group', 'permissions', 'mime_type', 'where']
 
+[org/gnome/evince/default]
+window-ratio=(1.8970588235294117, 0.90404040404040409)
+
 [org/gnome/file-roller/listing]
 sort-method='name'
 name-column-width=250
@@ -141,8 +210,8 @@ sidebar-width=200
 window-height=480
 window-width=600
 
-[org/gnome/evince/default]
-window-ratio=(1.8970588235294117, 0.90404040404040409)
+[org/gnome/evolution-data-server]
+migrated=true
 
 [org/gnome/deja-dup]
 backend='file'
@@ -169,6 +238,21 @@ exec='gnome-terminal'
 autorun-x-content-start-app=@as []
 autorun-x-content-ignore=@as []
 autorun-x-content-open-folder=@as []
+
+[org/gnome/desktop/app-folders]
+folder-children=['Utilities', 'Sundry']
+
+[org/gnome/desktop/app-folders/folders/Utilities]
+translate=true
+categories=['X-GNOME-Utilities']
+apps=['org.gnome.baobab.desktop', 'deja-dup-preferences.desktop', 'eog.desktop', 'evince.desktop', 'org.gnome.FileRoller.desktop', 'gnome-calculator.desktop', 'gnome-dictionary.desktop', 'org.gnome.Characters.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Screenshot.desktop', 'gnome-system-log.desktop', 'gnome-system-monitor.desktop', 'gnome-tweak-tool.desktop', 'gucharmap.desktop', 'seahorse.desktop', 'vinagre.desktop', 'yelp.desktop']
+name='X-GNOME-Utilities.directory'
+
+[org/gnome/desktop/app-folders/folders/Sundry]
+translate=true
+categories=['X-GNOME-Sundry']
+apps=['alacarte.desktop', 'authconfig.desktop', 'ca.desrt.dconf-editor.desktop', 'fedora-release-notes.desktop', 'firewall-config.desktop', 'flash-player-properties.desktop', 'gconf-editor.desktop', 'gnome-abrt.desktop', 'gnome-power-statistics.desktop', 'ibus-setup-anthy.desktop', 'ibus-setup.desktop', 'ibus-setup-hangul.desktop', 'ibus-setup-libbopomofo.desktop', 'ibus-setup-libpinyin.desktop', 'ibus-setup-m17n.desktop', 'ibus-setup-typing-booster.desktop', 'im-chooser.desktop', 'itweb-settings.desktop', 'jhbuild.desktop', 'javaws.desktop', 'java-1.7.0-openjdk-jconsole.desktop', 'java-1.7.0-openjdk-policytool.desktop', 'log4j-chainsaw.desktop', 'log4j-logfactor5.desktop', 'nm-connection-editor.desktop', 'orca.desktop', 'setroubleshoot.desktop', 'system-config-date.desktop', 'system-config-firewall.desktop', 'system-config-keyboard.desktop', 'system-config-language.desktop', 'system-config-printer.desktop', 'system-config-users.desktop', 'vino-preferences.desktop']
+name='X-GNOME-Sundry.directory'
 
 [org/gnome/desktop/screensaver]
 lock-delay=uint32 30
@@ -249,7 +333,7 @@ picture-options='zoom'
 
 [org/gnome/desktop/input-sources]
 sources=[('xkb', 'us')]
-xkb-options=['ctrl:swapcaps']
+xkb-options=['ctrl:nocaps']
 
 [org/gnome/eog/view]
 background-color='rgb(0,0,0)'
@@ -282,7 +366,7 @@ default-size-columns=120
 use-system-font=false
 use-transparent-background=true
 use-theme-colors=false
-font='Ubuntu Mono derivative Powerline 12'
+font='Ubuntu Mono derivative Powerline 14'
 use-theme-transparency=true
 bold-color-same-as-fg=true
 background-color='rgb(0,43,54)'
@@ -352,9 +436,27 @@ ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
+[org/gnome/nm-applet/eap/22bdc4d7-a67f-4680-94a6-840fea696c93]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
 [org/gnome/Totem]
 subtitle-encoding='UTF-8'
 active-plugins=['save-file', 'movie-properties', 'vimeo', 'skipto', 'screensaver', 'media_player_keys', 'recent', 'autoload-subtitles', 'screenshot', 'apple-trailers']
+
+[org/gnome/gnome-system-monitor]
+show-dependencies=false
+current-tab='resources'
+maximized=false
+show-whose-processes='user'
+window-state=(700, 500, 65, 50)
+
+[org/gnome/gnome-system-monitor/disktreenew]
+col-6-visible=true
+col-6-width=0
+
+[org/gnome/software]
+check-timestamp=int64 1462328843
 
 [org/gtk/settings/file-chooser]
 sort-column='name'
@@ -365,6 +467,10 @@ show-hidden=true
 window-size=(910, 716)
 sort-order='ascending'
 location-mode='path-bar'
+
+[org/compiz]
+existing-profiles=['Default', 'unity']
+current-profile='unity'
 
 [org/compiz/profiles/Default]
 plugins-with-set-keys=['commands', 'thumbnail', 'resize', 'move', 'core', 'composite', 'opengl', 'decor', 'vpswitch', 'snap', 'mousepoll', 'place', 'wall', 'grid', 'session', 'animation', 'fade', 'unitymtgrabhandles', 'workarounds', 'scale', 'expo', 'ezoom', 'unityshell', 'rotate', 'put', 'staticswitcher', 'extrawm', 'ring', 'firepaint', 'titleinfo', 'cubeaddon', 'kdecompat', 'annotate', 'switcher', 'showdesktop', 'addhelper', 'opacify', 'trailfocus', 'crashhandler', 'wallpaper', 'scaleaddon', 'resizeinfo', 'notification', 'showrepaint', 'bench', 'mblur', 'splash', 'winrules', 'wobbly', 'td', 'scalefilter', 'widget', 'cube', 'wizard', 'screenshot', 'shelf', 'clone', 'water', 'mag', 'freewins', 'workspacenames', 'fadedesktop', 'imgjpeg', 'shift', 'maximumize', 'matecompat', 'neg', 'showmouse', 'obs']
@@ -458,14 +564,101 @@ ground-color2='#b3b3b300'
 [org/compiz/profiles/Default/plugins/showmouse]
 color='#ffdf3fff'
 
+[org/compiz/profiles/unity]
+plugins-with-set-keys=['matecompat', 'snap', 'staticswitcher', 'wall', 'switcher', 'gnomecompat', 'session', 'animation', 'opengl', 'workarounds', 'unitymtgrabhandles', 'fade', 'unityshell', 'expo', 'move', 'grid', 'resize', 'decor', 'place', 'ezoom', 'composite', 'commands', 'vpswitch', 'core', 'mousepoll', 'scale', 'ring', 'clone', 'firepaint', 'splash', 'titleinfo', 'cubeaddon', 'thumbnail', 'rotate', 'put', 'extrawm', 'notification', 'fadedesktop', 'annotate', 'maximumize', 'addhelper', 'opacify', 'crashhandler', 'showdesktop', 'scaleaddon', 'resizeinfo', 'neg', 'showrepaint', 'bench', 'kdecompat', 'td', 'scalefilter', 'winrules', 'widget', 'mblur', 'wizard', 'screenshot', 'shelf', 'wobbly', 'water', 'mag', 'wallpaper', 'freewins', 'workspacenames', 'trailfocus', 'imgjpeg', 'shift', 'cube', 'showmouse', 'obs']
+
+[org/compiz/profiles/unity/plugins/resizeinfo]
+gradient-1='#cccce6cc'
+gradient-2='#f3f3f3cc'
+gradient-3='#d9d9d9cc'
+outline-color='#e6e6e6ff'
+
+[org/compiz/profiles/unity/plugins/scale]
+initiate-key='<Super>d'
+
+[org/compiz/profiles/unity/plugins/ezoom]
+zoom-box-fill-color='#2f2f2f4f'
+zoom-box-outline-color='#2f2f4f9f'
+
+[org/compiz/profiles/unity/plugins/cubeaddon]
+ground-color1='#b3b3b3cc'
+ground-color2='#b3b3b300'
+
 [org/compiz/profiles/unity/plugins/unityshell]
-icon-size=18
-launcher-hide-mode=1
+show-launcher='Disabled'
+icon-size=48
 num-launchers=0
+alt-tab-forward='Disabled'
+inactive-shadow-color='#000000a5'
+alt-tab-prev='Disabled'
+launcher-hide-mode=1
+launcher-switcher-prev='Disabled'
+
+[org/compiz/profiles/unity/plugins/wall]
+thumb-highlight-gradient-shadow-color='#dfdfdfff'
+arrow-base-color='#e6e6e6d9'
+arrow-shadow-color='#dcdcdcd9'
+
+[org/compiz/profiles/unity/plugins/thumbnail]
+thumb-color='#0000007f'
+font-background-color='#0000007f'
+
+[org/compiz/profiles/unity/plugins/freewins]
+cross-line-color='#1800ffff'
+snap-threshold=50
+circle-color='#54befb80'
+line-color='#1800ffff'
+
+[org/compiz/profiles/unity/plugins/animation]
+unminimize-effects=['animation:Glide 2']
+close-matches=['((type=Normal | Unknown) | name=sun-awt-X11-XFramePeer | name=sun-awt-X11-XDialogPeer) & !(role=toolTipTip | role=qtooltip_label) & !(type=Normal & override_redirect=1) & !(name=gnome-screensaver) & !(name=gnome-screenshot)', '((type=Menu | PopupMenu | DropdownMenu | Combo | Dialog | ModalDialog | Normal) & !(class=\\.exe$))', '(type=Tooltip | Notification | Utility) & !(name=compiz) & !(title=notify-osd)']
+open-matches=['((type=Normal | Unknown) | name=sun-awt-X11-XFramePeer | name=sun-awt-X11-XDialogPeer) & !(role=toolTipTip | role=qtooltip_label) & !(type=Normal & override_redirect=1) & !(name=gnome-screensaver)', '((type=Menu | PopupMenu | DropdownMenu | Combo | Dialog | ModalDialog | Normal) & !(class=\\.exe$))', '(type=Tooltip | Notification | Utility) & !(name=compiz) & !(title=notify-osd)']
+
+[org/compiz/profiles/unity/plugins/switcher]
+background-color='#333333d9'
+
+[org/compiz/profiles/unity/plugins/screenshot]
+selection-outline-color='#2f2f4f9f'
+selection-fill-color='#2f2f4f4f'
+
+[org/compiz/profiles/unity/plugins/decor]
+active-shadow-color='#00000080'
+inactive-shadow-color='#000000ff'
+
+[org/compiz/profiles/unity/plugins/expo]
+distance=0.004999999888241291
+expo-key='Disabled'
+ground-color2='#b3b3b300'
+ground-color1='#b3b3b3cc'
+vp-saturation=40.0
+
+[org/compiz/profiles/unity/plugins/gnomecompat]
+main-menu-key='Disabled'
+run-key='Disabled'
+
+[org/compiz/profiles/unity/plugins/ring]
+prev-key='Disabled'
+prev-all-key='<Shift><Alt>Tab'
+next-all-key='<Alt>Tab'
+next-key='Disabled'
+
+[org/compiz/profiles/unity/plugins/firepaint]
+fire-color='#ff3305ff'
+
+[org/compiz/profiles/unity/plugins/staticswitcher]
+background-color='#333333d9'
 
 [org/compiz/profiles/unity/plugins/core]
 hsize=1
 vsize=1
+active-plugins=['core', 'composite', 'opengl', 'imgpng', 'move', 'grid', 'resize', 'place', 'compiztoolbox', 'commands', 'copytex', 'vpswitch', 'mousepoll', 'ring', 'regex', 'snap', 'wall', 'session', 'animation', 'workarounds', 'unitymtgrabhandles', 'fade', 'expo', 'ezoom', 'scale', 'unityshell']
+
+[org/compiz/profiles/unity/plugins/shift]
+ground-color1='#b3b3b3cc'
+ground-color2='#b3b3b300'
+
+[org/compiz/profiles/unity/plugins/showmouse]
+color='#ffdf3fff'
 
 [org/compiz/integrated]
 display-all-workspaces=false

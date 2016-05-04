@@ -1,10 +1,11 @@
 tmux
 vim-nox
 fish
-mutt
-msmtp
-powerline
 compizconfig-settings-manager
 compiz-plugins
-irssi
-tmuxinator
+indicator-multiload
+google-chrome-stable
+swapspace
+python3-pip
+ruby
+slingscold

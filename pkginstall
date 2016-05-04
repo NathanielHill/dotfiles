@@ -1,8 +1,47 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-#if which fish; then chsh -s `which fish`; fi
+# Change shell to fish
+if which fish; then chsh -s `which fish`; fi
 
-#install all packages enumerated in ./pkglist
+# Adding Google PPA key and PPA manually
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list'
+
+# Add all PPAs first
+while read ppa
+do sudo add-apt-repository $ppa
+done < ppas
+
+# Now that PPAs are installed, lets update
+sudo apt-get update
+
+# Install all packages enumerated in ./pkglist
 while read package;
 do sudo apt-get -y install $package;
 done < pkglist
+
+# Now let's upgrade, autoremove and clean. You may need to dist-upgrade manually, but we won't automate that incase it brakes something
+sudo apt-get -y upgrade
+sudo apt-get -y autoremove
+sudo apt-get -y clean
+
+# Install all Python packages from requirements.txt
+sudo pip3 install -r requirements.txt
+
+# Install all Ruby gems (just tmuxinator so far)
+while read gem;
+do sudo gem install $gem;
+done < gems
+
+# Load dconf GUI settings
+dconf load / < settings.dconf
+
+# Rebuilding font cache
+fc-cache -f -v
+
+
+echo ""
+echo "If everything worked, try logging in/out for new shell and GUI settings :)"
+echo ""
+echo "Don't forget to copy your private SSH keys!"
+echo ""
