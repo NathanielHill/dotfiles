@@ -1,3 +1,4 @@
 jedi
 powerline-status
 virtualfish
+youtube-dl
