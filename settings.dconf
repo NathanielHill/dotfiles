@@ -90,9 +90,14 @@ background-transparency-percent=9
 sleep-inactive-battery-timeout=300
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
 www='<Super>s'
-terminal='<Super>a'
+terminal=''
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Super>a'
+command='gnome-terminal --maximize'
+name='Terminal'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='Super_L'
@@ -200,7 +205,7 @@ delay=0
 last-save-directory='file:///home/nhill/Desktop'
 
 [org/gnome/nautilus/window-state]
-geometry='890x494+66+24'
+geometry='890x494+1030+24'
 maximized=false
 
 [org/gnome/nautilus/icon-view]
@@ -229,6 +234,9 @@ recreate-folders=true
 sidebar-width=200
 window-height=480
 window-width=600
+
+[org/gnome/calendar]
+window-maximized=true
 
 [org/gnome/evolution-data-server]
 migrated=true
@@ -372,9 +380,6 @@ toolbar=true
 sidebar=false
 image-gallery=false
 
-[org/gnome/rhythmbox/library/source]
-show-browser=true
-
 [org/gnome/rhythmbox/plugins/audioscrobbler/Last.fm]
 scrobbling-enabled=true
 
@@ -391,11 +396,32 @@ show-browser=true
 active-plugins=['artsearch', 'dbus-media-server', 'audioscrobbler', 'mtpdevice', 'rb', 'daap', 'ipod', 'notification', 'mpris', 'audiocd', 'generic-player', 'mmkeys', 'power-manager', 'iradio', 'android']
 seen-plugins=['grilo', 'artsearch', 'dbus-media-server', 'rblirc', 'soundcloud', 'fmradio', 'audioscrobbler', 'rbzeitgeist', 'replaygain', 'lyrics', 'mtpdevice', 'rb', 'im-status', 'daap', 'ipod', 'notification', 'mpris', 'sendto', 'pythonconsole']
 
+[org/gnome/rhythmbox/player]
+play-order='shuffle'
+volume=1.0
+
+[org/gnome/rhythmbox/podcast]
+download-location='file:///home/nhill/Music'
+
 [org/gnome/rhythmbox/podcast/source]
 show-browser=true
 
 [org/gnome/rhythmbox]
 position=(0, 24)
+size=(1228, 639)
+
+[org/gnome/rhythmbox/library]
+layout-filename='%tN - %tt'
+layout-path='%aa/%at'
+
+[org/gnome/rhythmbox/library/encoding]
+media-type='audio/x-vorbis'
+
+[org/gnome/rhythmbox/library/source]
+show-browser=true
+
+[org/gnome/rhythmbox/sources]
+visible-columns=['post-time', 'artist', 'duration', 'genre', 'track-number', 'album']
 
 [org/gnome/rhythmbox/rhythmdb]
 locations=['file:///home/nhill/Music']
@@ -747,7 +773,7 @@ migrated=true
 interested-media-players=['rhythmbox.desktop', 'vlc.desktop']
 
 [com/canonical/unity]
-minimize-count=52
+minimize-count=54
 
 [com/canonical/unity/interface]
 text-scale-factor=1.0
