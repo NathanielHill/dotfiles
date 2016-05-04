@@ -215,7 +215,7 @@ migrated=true
 
 [org/gnome/deja-dup]
 backend='file'
-prompt-check='2015-10-18T01:49:44.740602Z'
+prompt-check='2016-05-04T05:44:32.803033Z'
 
 [org/gnome/deja-dup/file]
 path='/home/nhill/deja-dup'
@@ -396,11 +396,15 @@ ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
-[org/gnome/nm-applet/eap/cfaabab6-796b-42a6-931b-ef28f0fd354c]
+[org/gnome/nm-applet/eap/1537ebc5-0295-430c-a80c-b2b4369cbaf2]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
 [org/gnome/nm-applet/eap/efd76a20-ee30-435f-bc11-469e08a1ba83]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/cfaabab6-796b-42a6-931b-ef28f0fd354c]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
@@ -463,7 +467,7 @@ sort-column='name'
 sidebar-width=148
 window-position=(383, 24)
 show-size-column=true
-show-hidden=true
+show-hidden=false
 window-size=(910, 716)
 sort-order='ascending'
 location-mode='path-bar'
@@ -711,7 +715,7 @@ migrated=true
 interested-media-players=['vlc.desktop']
 
 [com/canonical/unity]
-minimize-count=51
+minimize-count=52
 
 [com/canonical/unity/interface]
 text-scale-factor=1.0
