@@ -7,7 +7,7 @@ root: ~/Projects/arclight
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-#pre: tmux start-server
+# pre: tmux start-server
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -19,7 +19,7 @@ root: ~/Projects/arclight
 # tmux_command: byobu
 
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
-startup_window: vim
+# startup_window: vim
 
 # Controls whether the tmux session should be attached to automatically. Defaults to true.
 #attach: false
