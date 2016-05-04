@@ -63,6 +63,29 @@ enabled=true
 [de/mh21/indicator-multiload/graphs/mem/mem1]
 color='traditional:mem1'
 
+[org/gnome/terminal/legacy]
+dark-theme=true
+schema-version=uint32 3
+
+[org/gnome/terminal/legacy/keybindings]
+paste='<Primary>v'
+copy='<Primary>x'
+
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+foreground-color='rgb(131,148,150)'
+visible-name='Badass Programmer Profile'
+palette=['rgb(7,54,66)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(253,246,227)']
+default-size-rows=40
+default-size-columns=120
+use-system-font=false
+use-transparent-background=true
+use-theme-colors=false
+font='Ubuntu Mono derivative Powerline 14'
+use-theme-transparency=true
+bold-color-same-as-fg=true
+background-color='rgb(0,43,54)'
+background-transparency-percent=9
+
 [org/gnome/settings-daemon/plugins/power]
 sleep-inactive-battery-timeout=300
 
@@ -75,9 +98,6 @@ terminal='<Super>a'
 binding='Super_L'
 command='slingscold'
 name='Slingscold'
-
-[org/gnome/settings-daemon/peripherals/touchpad]
-touchpad-enabled=true
 
 [org/gnome/settings-daemon/peripherals/keyboard]
 numlock-state='off'
@@ -258,6 +278,9 @@ name='X-GNOME-Sundry.directory'
 lock-delay=uint32 30
 lock-enabled=true
 
+[org/gnome/desktop/peripherals/touchpad]
+send-events='enabled'
+
 [org/gnome/desktop/privacy]
 remember-recent-files=false
 
@@ -349,34 +372,43 @@ toolbar=true
 sidebar=false
 image-gallery=false
 
-[org/gnome/terminal/legacy]
-dark-theme=true
-schema-version=uint32 3
+[org/gnome/rhythmbox/library/source]
+show-browser=true
 
-[org/gnome/terminal/legacy/keybindings]
-paste='<Primary>v'
-copy='<Primary>x'
+[org/gnome/rhythmbox/plugins/audioscrobbler/Last.fm]
+scrobbling-enabled=true
 
-[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
-foreground-color='rgb(131,148,150)'
-visible-name='Badass Programmer Profile'
-palette=['rgb(7,54,66)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(253,246,227)']
-default-size-rows=40
-default-size-columns=120
-use-system-font=false
-use-transparent-background=true
-use-theme-colors=false
-font='Ubuntu Mono derivative Powerline 14'
-use-theme-transparency=true
-bold-color-same-as-fg=true
-background-color='rgb(0,43,54)'
-background-transparency-percent=9
+[org/gnome/rhythmbox/plugins/audioscrobbler/Libre.fm]
+scrobbling-enabled=true
+
+[org/gnome/rhythmbox/plugins/iradio]
+initial-stations-loaded=true
+
+[org/gnome/rhythmbox/plugins/iradio/source]
+show-browser=true
+
+[org/gnome/rhythmbox/plugins]
+active-plugins=['artsearch', 'dbus-media-server', 'audioscrobbler', 'mtpdevice', 'rb', 'daap', 'ipod', 'notification', 'mpris', 'audiocd', 'generic-player', 'mmkeys', 'power-manager', 'iradio', 'android']
+seen-plugins=['grilo', 'artsearch', 'dbus-media-server', 'rblirc', 'soundcloud', 'fmradio', 'audioscrobbler', 'rbzeitgeist', 'replaygain', 'lyrics', 'mtpdevice', 'rb', 'im-status', 'daap', 'ipod', 'notification', 'mpris', 'sendto', 'pythonconsole']
+
+[org/gnome/rhythmbox/podcast/source]
+show-browser=true
+
+[org/gnome/rhythmbox]
+position=(0, 24)
+
+[org/gnome/rhythmbox/rhythmdb]
+locations=['file:///home/nhill/Music']
 
 [org/gnome/nm-applet/eap/2ba6e619-bce7-401b-9be7-8f08530b8bb3]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=true
 
 [org/gnome/nm-applet/eap/a6701a7e-e17b-4ecf-bd80-8e4232913134]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/158ff8df-4ad5-4c46-8ed0-bb89ea0541fc]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
@@ -392,11 +424,11 @@ ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
-[org/gnome/nm-applet/eap/5a1d794f-c92e-4327-afbb-76b8230b152e]
+[org/gnome/nm-applet/eap/1537ebc5-0295-430c-a80c-b2b4369cbaf2]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
-[org/gnome/nm-applet/eap/1537ebc5-0295-430c-a80c-b2b4369cbaf2]
+[org/gnome/nm-applet/eap/5a1d794f-c92e-4327-afbb-76b8230b152e]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
@@ -460,7 +492,7 @@ col-6-visible=true
 col-6-width=0
 
 [org/gnome/software]
-check-timestamp=int64 1462328843
+check-timestamp=int64 1462379988
 
 [org/gtk/settings/file-chooser]
 sort-column='name'
@@ -712,7 +744,7 @@ timezone-name='America/Chicago Austin'
 migrated=true
 
 [com/canonical/indicator/sound]
-interested-media-players=['vlc.desktop']
+interested-media-players=['rhythmbox.desktop', 'vlc.desktop']
 
 [com/canonical/unity]
 minimize-count=52
@@ -722,7 +754,7 @@ text-scale-factor=1.0
 app-fallback-to-maximum-scale-factor=false
 
 [com/canonical/unity/launcher]
-favorites=['application://org.gnome.Nautilus.desktop', 'application://firefox.desktop', 'application://unity-control-center.desktop', 'application://gnome-terminal.desktop', 'application://transmission-gtk.desktop', 'unity://expo-icon', 'unity://running-apps', 'unity://devices', 'application://gedit.desktop', 'application://google-chrome.desktop', 'application://gnome-calculator.desktop']
+favorites=['application://org.gnome.Nautilus.desktop', 'application://firefox.desktop', 'application://unity-control-center.desktop', 'application://gnome-terminal.desktop', 'application://transmission-gtk.desktop', 'unity://expo-icon', 'unity://running-apps', 'unity://devices', 'application://gedit.desktop', 'application://google-chrome.desktop', 'application://gnome-calculator.desktop', 'application://rhythmbox.desktop']
 
 [com/canonical/unity/lenses]
 remote-content-search='none'
@@ -741,4 +773,4 @@ history=['xterm', 'ccsm', 'sscm']
 
 [desktop/ibus/general]
 preload-engines=['xkb:us::eng']
-version='1.5.9'
+version='1.5.11'
