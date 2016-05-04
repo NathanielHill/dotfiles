@@ -73,3 +73,5 @@ end
 	set -x EDITOR vim
 
 eval (python3 -m virtualfish auto_activation global_requirements projects)
+
+set fish_greeting ""
