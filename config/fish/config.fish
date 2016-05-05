@@ -75,3 +75,5 @@ end
 eval (python3 -m virtualfish auto_activation global_requirements projects)
 
 set fish_greeting ""
+
+set --universal fish_user_paths $fish_user_paths ~/.local/bin
