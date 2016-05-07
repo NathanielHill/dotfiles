@@ -147,5 +147,13 @@ let g:jedi#popup_on_dot = 0
 
 set foldmethod=indent
 
+" This isn't working! Need to have all folds unfolded on file open
 autocmd Syntax css,c,cpp,vim,xml,html,py,js setlocal foldmethod=indent
 autocmd Syntax css,c,cpp,vim,xml,html,py,js normal zR
+
+:nnoremap <C-n> :bnext<CR>
+:nnoremap <C-p> :bprevious<CR>
+
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>

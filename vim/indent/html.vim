@@ -56,7 +56,10 @@ call <SID>HtmlIndentPush('md-icon')
 call <SID>HtmlIndentPush('md-fab-speed-dial')
 call <SID>HtmlIndentPush('md-fab-trigger')
 call <SID>HtmlIndentPush('md-fab-actions')
-
+call <SID>HtmlIndentPush('md-card')
+call <SID>HtmlIndentPush('md-card-content')
+call <SID>HtmlIndentPush('md-tabs')
+call <SID>HtmlIndentPush('md-tab')
 
 " Custom tags above :) -Nathaniel Hill
 
