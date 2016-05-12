@@ -1,3 +1,6 @@
+" To avoid people writing bad shell scripts that aren't fish compatible
+set shell=/bin/bash
+
 set rtp+=/home/nhill/.local/lib/python2.7/site-packages/bindings/vim
 
 python3 from powerline.vim import setup as powerline_setup
@@ -47,7 +50,7 @@ colorscheme solarized
 set encoding=utf8
 set number
 set hidden
-" set mouse=a
+set mouse=a
 
 " let g:nerdtree_tabs_open_on_console_startup=1
 set autochdir
@@ -69,7 +72,7 @@ autocmd InsertLeave * :set relativenumber
 set relativenumber
 
 " filenames like *.xml, *.html, *.xhtml, ...
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.css,*.js"
+let g:closetag_filenames = "*.xml, *.svg, *.html,*.xhtml,*.phtml"
 
 set list
 set listchars=eol:¬,trail:~,tab:▸\ ,precedes:«,extends:»
@@ -127,15 +130,17 @@ autocmd VimEnter * call NERDTreeStartUp()
 " Autocomplete
 
 " NEOCOMPLCACHE SETTINGS
+" This screws up exiting Inster Mode via ESC when there's an autocomplete in
+" process :()
 let g:neocomplcache_enable_at_startup = 1 
 imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : 
 let g:neocomplcache_force_overwrite_completefunc = 1
 if !exists('g:neocomplcache_omni_functions')
-  let g:neocomplcache_omni_functions = {}
+	let g:neocomplcache_omni_functions = {}
 endif
 if !exists('g:neocomplcache_force_omni_patterns')
-  let g:neocomplcache_force_omni_patterns = {}
+	let g:neocomplcache_force_omni_patterns = {}
 endif
 let g:neocomplcache_force_overwrite_completefunc = 1
 let g:neocomplcache_force_omni_patterns['python'] = '[^. \t]\.\w*'
@@ -148,8 +153,8 @@ let g:jedi#popup_on_dot = 0
 set foldmethod=indent
 
 " This isn't working! Need to have all folds unfolded on file open
-autocmd Syntax css,c,cpp,vim,xml,html,py,js setlocal foldmethod=indent
-autocmd Syntax css,c,cpp,vim,xml,html,py,js normal zR
+autocmd Syntax css,c,cpp,vim,xml,svg,html,py,js setlocal foldmethod=indent
+autocmd Syntax css,c,cpp,vim,xml,svg,html,py,js normal zR
 
 :nnoremap <C-n> :bnext<CR>
 :nnoremap <C-p> :bprevious<CR>
@@ -157,3 +162,18 @@ autocmd Syntax css,c,cpp,vim,xml,html,py,js normal zR
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
 inoremap <silent> <C-S>         <C-O>:update<CR>
+
+"Adding #{} to AutoClose Plugin and activating it for String interpolation
+let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}', '{{': '}}'}
+let g:AutoCloseProtectedRegions = ["Character"]
+let g:AutoCloseExpandEnterOn = "{"
+
+" Remaps Ctrl-O to do a full re-indent of the entire current buffer in Insert,
+" Normal and Visual mode :)
+nnoremap <C-o> :let b:PlugView=winsaveview()<CR>gg=G:call winrestview(b:PlugView) <CR>:echo "file indented"<CR>
+:vnoremap <C-o> <C-C>:let b:PlugView=winsaveview()<CR>gg=G:call winrestview(b:PlugView) <CR>:echo "file indented"<CR>v
+:inoremap <C-o> <C-C>:let b:PlugView=winsaveview()<CR>gg=G:call winrestview(b:PlugView) <CR>:echo "file indented"<CR>i
+
+" Since I primarily enter Insert mode via 'i', this puts the cursor back in
+" the position I left Insert mode from
+:inoremap <silent> <Esc> <Esc>`^

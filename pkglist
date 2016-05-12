@@ -12,3 +12,6 @@ slingscold
 vlc
 nmap
 ffmpeg
+nodejs
+nodejs-legacy
+npm
