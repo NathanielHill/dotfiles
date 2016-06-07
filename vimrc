@@ -1,7 +1,7 @@
 " To avoid people writing bad shell scripts that aren't fish compatible
 set shell=/bin/bash
 
-set rtp+=/home/nhill/.local/lib/python2.7/site-packages/bindings/vim
+" set rtp+=/home/nhill/.local/lib/python2.7/site-packages/bindings/vim
 
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
@@ -50,7 +50,7 @@ colorscheme solarized
 set encoding=utf8
 set number
 set hidden
-set mouse=a
+" set mouse=a
 
 " let g:nerdtree_tabs_open_on_console_startup=1
 set autochdir
@@ -105,9 +105,11 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-set noexpandtab
-set shiftwidth=3
-set tabstop=3
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+" set noexpandtab
+" set shiftwidth=3
+" set tabstop=3
 
 let NERDTreeIgnore = ['\.pyc$','__pycache__','__init__']
 
@@ -145,7 +147,8 @@ endif
 let g:neocomplcache_force_overwrite_completefunc = 1
 let g:neocomplcache_force_omni_patterns['python'] = '[^. \t]\.\w*'
 set ofu=syntaxcomplete#Complete
-au FileType python set omnifunc=pythoncomplete#Complete
+" Have to fix this!! (:echo has('python') returns 0 :(
+" au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python let b:did_ftplugin = 1
 " Vim-jedi settings
 let g:jedi#popup_on_dot = 0
@@ -154,14 +157,16 @@ set foldmethod=indent
 
 " This isn't working! Need to have all folds unfolded on file open
 autocmd Syntax css,c,cpp,vim,xml,svg,html,py,js setlocal foldmethod=indent
-autocmd Syntax css,c,cpp,vim,xml,svg,html,py,js normal zR
+" autocmd Syntax css,c,cpp,vim,xml,svg,html,py,js normal zR
+
+au BufWinEnter * normal zR
 
 :nnoremap <C-n> :bnext<CR>
 :nnoremap <C-p> :bprevious<CR>
 
-noremap <silent> <C-S>          :update<CR>
-vnoremap <silent> <C-S>         <C-C>:update<CR>
-inoremap <silent> <C-S>         <C-O>:update<CR>
+:nnoremap <silent> <C-S>          :update<CR>
+:vnoremap <silent> <C-S>         <C-C>:update<CR>
+:inoremap <silent> <C-S>         <C-O>:update<CR>
 
 "Adding #{} to AutoClose Plugin and activating it for String interpolation
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}', '{{': '}}'}
@@ -177,3 +182,21 @@ nnoremap <C-o> :let b:PlugView=winsaveview()<CR>gg=G:call winrestview(b:PlugView
 " Since I primarily enter Insert mode via 'i', this puts the cursor back in
 " the position I left Insert mode from
 :inoremap <silent> <Esc> <Esc>`^
+
+let jshint2_save = 1
+
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers=['jscs']
+
+:nnoremap <C-e> :update<CR>:Bdelete<CR>
+:vnoremap <C-e> :update<CR>:Bdelete<CR>
+:inoremap <C-e> :update<CR>:Bdelete<CR>
+

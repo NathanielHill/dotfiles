@@ -58,8 +58,17 @@ call <SID>HtmlIndentPush('md-fab-trigger')
 call <SID>HtmlIndentPush('md-fab-actions')
 call <SID>HtmlIndentPush('md-card')
 call <SID>HtmlIndentPush('md-card-content')
+call <SID>HtmlIndentPush('md-card-title-text')
+call <SID>HtmlIndentPush('md-card-title')
+call <SID>HtmlIndentPush('md-card-actions')
 call <SID>HtmlIndentPush('md-tabs')
 call <SID>HtmlIndentPush('md-tab')
+call <SID>HtmlIndentPush('md-tab-content')
+call <SID>HtmlIndentPush('svg')
+call <SID>HtmlIndentPush('g')
+call <SID>HtmlIndentPush('desc')
+call <SID>HtmlIndentPush('defs')
+call <SID>HtmlIndentPush('polygon')
 
 " Custom tags above :) -Nathaniel Hill
 

@@ -2,65 +2,65 @@
 
 read -p "Would you like to run the package installer script (y/N)? " answer
 case ${answer:0:1} in
-	y|Y )
-		# Change shell to fish
-		if which fish; then chsh -s `which fish`; fi
+    y|Y )
+        # Change shell to fish
+        if which fish; then chsh -s `which fish`; fi
 
-		# Adding Google PPA key and PPA manually
-		wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-		sudo sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list'
+        # Adding Google PPA key and PPA manually
+        wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        sudo sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google.list'
 
-		# Add all PPAs first
-		while read ppa
-		do sudo add-apt-repository $ppa
-		done < ppas
+        # Add all PPAs first
+        while read ppa
+        do sudo add-apt-repository $ppa
+        done < ppas
 
-		# Now that PPAs are installed, lets update
-		sudo apt-get update
+        # Now that PPAs are installed, lets update
+        sudo apt-get update
 
-		# Install all packages enumerated in ./pkglist
-		while read package;
-		do sudo apt-get -y install $package;
-		done < pkglist
+        # Install all packages enumerated in ./pkglist
+        while read package;
+        do sudo apt-get -y install $package;
+        done < pkglist
 
-		# Now let's upgrade, autoremove and clean. You may need to dist-upgrade manually, but we won't automate that incase it brakes something
-		sudo apt-get -y upgrade
-		sudo apt-get -y autoremove
-		sudo apt-get -y clean
+        # Now let's upgrade, autoremove and clean. You may need to dist-upgrade manually, but we won't automate that incase it brakes something
+        sudo apt-get -y upgrade
+        sudo apt-get -y autoremove
+        sudo apt-get -y clean
 
-		# Install all Python packages from requirements.txt
-		sudo pip3 install -r requirements.txt
+        # Install all Python packages from requirements.txt
+        sudo pip3 install -r requirements.txt
 
-		# Install all Ruby gems (just tmuxinator so far)
-		while read gem;
-		do sudo gem install $gem;
-		done < gems
+        # Install all Ruby gems (just tmuxinator so far)
+        while read gem;
+        do sudo gem install $gem;
+        done < gems
 
-		# Load dconf GUI settings
-		dconf load / < settings.dconf
+        # Load dconf GUI settings
+        dconf load / < settings.dconf
 
-		# Rebuilding font cache
-		fc-cache -f -v
+        # Rebuilding font cache
+        fc-cache -f -v
 
-		# Adding git "Origin" to github for this repo
-		# SSH Private key needs to be copied for this to work
-		git remote set-url origin git@github.com:/NathanielHill/dotfiles.git
+        # Adding git "Origin" to github for this repo
+        # SSH Private key needs to be copied for this to work
+        git remote set-url origin git@github.com:/NathanielHill/dotfiles.git
 
-		# Remove some useless empty directories Ubuntu puts in ~
-		rmdir ~/Public
-		rmdir ~/Templates
-		rm ~/examples.desktop
+        # Remove some useless empty directories Ubuntu puts in ~
+        rmdir ~/Public
+        rmdir ~/Templates
+        rm ~/examples.desktop
 
-		echo ""
-		echo "If everything worked, try logging in/out for new shell and GUI settings :)"
-		echo ""
-		echo "Don't forget to copy your private SSH keys!"
-		echo ""
+        echo ""
+        echo "If everything worked, try logging in/out for new shell and GUI settings :)"
+        echo ""
+        echo "Don't forget to copy your private SSH keys!"
+        echo ""
 
 
-		;;
-	* )
-		echo "Not executing 'pkginstall' script... Goodybye :)"
-		;;
+        ;;
+    * )
+        echo "Not executing 'pkginstall' script... Goodybye :)"
+        ;;
 esac
 

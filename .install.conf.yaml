@@ -12,11 +12,11 @@
       relink: true
       force: true
       path: config/fish/config.fish
-    ~/.fonts/truetype/Ubuntu Mono derivative Powerline.ttf:
+    ~/.fonts:
       create: true
       relink: true
       force: true
-      path: fonts/truetype/Ubuntu Mono derivative Powerline.ttf
+      path: fonts/
     ~/.config/fish/functions:
       create: true
       relink: true

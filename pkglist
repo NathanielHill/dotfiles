@@ -15,3 +15,5 @@ ffmpeg
 nodejs
 nodejs-legacy
 npm
+exfat-fuse
+exfat-utils
