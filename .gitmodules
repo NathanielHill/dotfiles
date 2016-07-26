@@ -51,4 +51,4 @@
 	url = https://github.com/moll/vim-bbye.git
 [submodule "vim/bundle/vim-devicons"]
 	path = vim/bundle/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
