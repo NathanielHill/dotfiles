@@ -1,7 +1,8 @@
 [core]
-	editor = vim
+editor = vim
+excludesfile = ~/.gitignore
 [user]
-	name = Nathaniel Hill
-	email = nathanielhill@utexas.edu
+name = Nathaniel Hill
+email = nathanielhill@utexas.edu
 [push]
-	default = simple
+default = simple
