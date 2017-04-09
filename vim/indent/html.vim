@@ -69,6 +69,8 @@ call <SID>HtmlIndentPush('g')
 call <SID>HtmlIndentPush('desc')
 call <SID>HtmlIndentPush('defs')
 call <SID>HtmlIndentPush('polygon')
+call <SID>HtmlIndentPush('md-input-container')
+call <SID>HtmlIndentPush('md-bottom-sheet')
 
 " Custom tags above :) -Nathaniel Hill
 
