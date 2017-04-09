@@ -7,7 +7,7 @@ root: ~/Projects/arclight
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-# pre: tmux start-server
+pre: tmux start-server
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -28,10 +28,10 @@ root: ~/Projects/arclight
 #post: tmux -u new-session -A -t arclight
 
 windows:
-  - vim: vim
-  - server:
+  - EDIT: vim
+  - SERVER:
      layout: main-horizontal
      panes:
            - ./manage.py runserver
            - 
-  - fish:
+  - DEBUG:
