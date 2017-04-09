@@ -114,18 +114,18 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 let NERDTreeIgnore = ['\.pyc$','__pycache__','__init__']
 
 function! NERDTreeStartUp()
-	if getcwd() =~ "/home/nhill/Projects"
-		NERDTree
-		if getcwd() =~ "/home/nhill/Projects/arclight"
-			let @a = ":NERDTreeFocusPOBjouBP"
-			normal @a
-			let @a = ''
-		endif
-		" why doesn't this work?
-		let @b = ":NERDTreeFocus"
-		normal @b
-		let @b = ''
-	endif
+    if getcwd() =~ "/home/nhill/Projects"
+        NERDTree
+        if getcwd() =~ "/home/nhill/Projects/arclight"
+            let @a = ":NERDTreeFocusPOBjouBP"
+            normal @a
+            let @a = ''
+        endif
+        " why doesn't this work?
+        let @b = ":NERDTreeFocus"
+        normal @b
+        let @b = ''
+    endif
 endfunction
 " autocmd VimEnter * call NERDTreeStartUp()
 
@@ -139,10 +139,10 @@ imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" 
 smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : 
 let g:neocomplcache_force_overwrite_completefunc = 1
 if !exists('g:neocomplcache_omni_functions')
-	let g:neocomplcache_omni_functions = {}
+    let g:neocomplcache_omni_functions = {}
 endif
 if !exists('g:neocomplcache_force_omni_patterns')
-	let g:neocomplcache_force_omni_patterns = {}
+    let g:neocomplcache_force_omni_patterns = {}
 endif
 let g:neocomplcache_force_overwrite_completefunc = 1
 let g:neocomplcache_force_omni_patterns['python'] = '[^. \t]\.\w*'
