@@ -93,5 +93,6 @@
    -
      command: sudo ./pkginstall
      description: Running custom install script...
+     stdin: true
      stdout: true
      stderr: true
