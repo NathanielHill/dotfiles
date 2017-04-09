@@ -127,7 +127,7 @@ function! NERDTreeStartUp()
 		let @b = ''
 	endif
 endfunction
-autocmd VimEnter * call NERDTreeStartUp()
+" autocmd VimEnter * call NERDTreeStartUp()
 
 " Autocomplete
 
