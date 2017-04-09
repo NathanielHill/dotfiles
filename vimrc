@@ -200,3 +200,6 @@ let g:syntastic_javascript_checkers=['jscs']
 :vnoremap <C-e> :update<CR>:Bdelete<CR>
 :inoremap <C-e> :update<CR>:Bdelete<CR>
 
+" Use the X11 clipboard to seamlessly copy past between Vim and GUI
+" http://vim.wikia.com/wiki/Accessing_the_system_clipboard
+set clipboard=unnamed
