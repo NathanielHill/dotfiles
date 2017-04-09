@@ -8,3 +8,6 @@ alias du="du -h"
 
 source ~/.bash_profile
 
+
+# added by Anaconda3 4.1.1 installer
+export PATH="/home/nhill/Anaconda3/bin:$PATH"
