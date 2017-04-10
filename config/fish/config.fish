@@ -76,4 +76,4 @@ eval (python3.5 -m virtualfish auto_activation global_requirements projects)
 
 set fish_greeting ""
 
-set --universal fish_user_paths ~/.local/bin ~/Anaconda3/bin
+set --universal fish_user_paths ~/.local/bin ~/anaconda3/bin
