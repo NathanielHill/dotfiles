@@ -11,6 +11,8 @@ pre: tmux start-server
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
+# This is just a hack since virtualfish won't activate properly otherwise :/
+pre_window: cd ~; and cd ~/Projects/arclight; and clear
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
