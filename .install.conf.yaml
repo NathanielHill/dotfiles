@@ -7,43 +7,28 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.gitconfig:
-      path: gitconfig
-    ~/.config/fish/config.fish:
-      path: config/fish/config.fish
-    ~/.config/powerline:
-      path: config/powerline/
-    ~/.fonts:
-      path: fonts/
-    ~/.config/fish/functions:
-      path: config/fish/functions/
-    ~/.config/fish/completions:
-      path: config/fish/completions/
-    ~/.tmux.conf:
-      path: tmux.conf
-    ~/.tmuxinator:
-      path: tmuxinator/
-    ~/.vim:
-      path: vim/
-    ~/.vimrc:
-      path: vimrc
-    ~/.inputrc:
-      path: inputrc
-    ~/.toprc:
-      path: toprc
-    ~/.gitignore:
-      path: gitignore
-    ~/.bashrc:
-      path: bashrc
-    ~/.bash_profile:
-      path: bash_profile
-    ~/.bash_logout:
-      path: bash_logout
-    ~/.local/bin:
-      path: bin/
+
+    ~/.config/fish/completions: config/fish/completions/
+    ~/.config/fish/functions: config/fish/functions/
+    ~/.config/powerline: config/powerline/
+    ~/.tmuxinator: tmuxinator/
+    ~/.local/bin: bin/
+    ~/.fonts: fonts/
+    ~/.vim: vim/
+
+    ~/.config/fish/config.fish: config/fish/config.fish
+    ~/.bash_profile: bash_profile
+    ~/.bash_logout: bash_logout
+    ~/.gitconfig: gitconfig
+    ~/.tmux.conf: tmux.conf
+    ~/.gitignore: gitignore
+    ~/.inputrc: inputrc
+    ~/.bashrc: bashrc
+    ~/.toprc: toprc
+    ~/.vimrc: vimrc
 
 - shell:
-   - [git submodule update --init --recursive, Updating submodules]
+   - [git submodule update --init --recursive, Updating submodules... ]
    -
      command: sudo ./pkginstall
      description: Running custom install script...
