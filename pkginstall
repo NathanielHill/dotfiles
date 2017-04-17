@@ -19,9 +19,7 @@ case ${answer:0:1} in
         sudo apt-get update
 
         # Install all packages enumerated in ./pkglist
-        while read package;
-        do sudo apt-get -y install $package;
-        done < pkglist
+        sudo apt-get -y install $(cat ./pkglist | tr '\n' ' ')
 
         # Now let's upgrade, autoremove and clean. You may need to dist-upgrade manually, but we won't automate that incase it brakes something
         sudo apt-get -y upgrade
