@@ -12,6 +12,10 @@
       relink: true
       force: true
       path: config/fish/config.fish
+    ~/.config/powerline:
+      create: true
+      relink: true
+      path: config/powerline/
     ~/.fonts:
       create: true
       relink: true
@@ -77,11 +81,6 @@
       relink: true
       force: true
       path: bash_logout
-    ~/.config/powerline/config.json:
-      create: true
-      relink: true
-      force: true
-      path: config/powerline/config.json
     ~/.local/bin:
       create: true
       relink: true
