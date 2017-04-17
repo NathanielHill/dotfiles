@@ -1,94 +1,49 @@
-- clean: ['~', '~/.config']
+- defaults:
+    link:
+        create: true
+        relink: true
+
+- clean: ['~']
 
 - link:
     ~/.dotfiles: ''
     ~/.gitconfig:
-      create: true
-      relink: true
-      force: true
       path: gitconfig
     ~/.config/fish/config.fish:
-      create: true
-      relink: true
-      force: true
       path: config/fish/config.fish
     ~/.config/powerline:
-      create: true
-      relink: true
       path: config/powerline/
     ~/.fonts:
-      create: true
-      relink: true
-      force: true
       path: fonts/
     ~/.config/fish/functions:
-      create: true
-      relink: true
-      force: true
       path: config/fish/functions/
     ~/.config/fish/completions:
-      create: true
-      relink: true
-      force: true
       path: config/fish/completions/
     ~/.tmux.conf:
-      create: true
-      relink: true
-      force: true
       path: tmux.conf
     ~/.tmuxinator:
-      create: true
-      relink: true
-      force: true
       path: tmuxinator/
     ~/.vim:
-      create: true
-      relink: true
-      force: true
       path: vim/
     ~/.vimrc:
-      create: true
-      relink: true
-      force: true
       path: vimrc
     ~/.inputrc:
-      create: true
-      relink: true
-      force: true
       path: inputrc
     ~/.toprc:
-      create: true
-      relink: true
-      force: true
       path: toprc
     ~/.gitignore:
-      create: true
-      relink: true
-      force: true
       path: gitignore
     ~/.bashrc:
-      create: true
-      relink: true
-      force: true
       path: bashrc
     ~/.bash_profile:
-      create: true
-      relink: true
-      force: true
       path: bash_profile
     ~/.bash_logout:
-      create: true
-      relink: true
-      force: true
       path: bash_logout
     ~/.local/bin:
-      create: true
-      relink: true
-      force: true
       path: bin/
 
 - shell:
-   - git submodule update --init --recursive
+   - [git submodule update --init --recursive, Updating submodules]
    -
      command: sudo ./pkginstall
      description: Running custom install script...
