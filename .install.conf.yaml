@@ -11,8 +11,8 @@
     ~/.config/fish/completions: config/fish/completions/
     ~/.config/fish/functions: config/fish/functions/
     ~/.config/powerline: config/powerline/
+    ~/.local/scripts: scripts/
     ~/.tmuxinator: tmuxinator/
-    ~/.local/bin: bin/
     ~/.fonts: fonts/
     ~/.vim: vim/
 
@@ -20,8 +20,8 @@
     ~/.bash_profile: bash_profile
     ~/.bash_logout: bash_logout
     ~/.gitconfig: gitconfig
-    ~/.tmux.conf: tmux.conf
     ~/.gitignore: gitignore
+    ~/.tmux.conf: tmux.conf
     ~/.inputrc: inputrc
     ~/.bashrc: bashrc
     ~/.toprc: toprc
