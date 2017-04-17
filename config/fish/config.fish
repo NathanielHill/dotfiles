@@ -72,7 +72,7 @@ end
 	set -x PROJECT_HOME ~/Projects/
 	set -x EDITOR vim
 
-eval (python3.5 -m virtualfish auto_activation global_requirements projects)
+eval (python3 -m virtualfish auto_activation global_requirements projects)
 
 set fish_greeting ""
 
