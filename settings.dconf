@@ -1,5 +1,9 @@
+[system/proxy]
+use-same-proxy=false
+
 [de/mh21/indicator-multiload/general]
 background-color='traditional:background'
+indicator-expression-index=0
 color-scheme='traditional'
 settings-version=uint32 3
 
@@ -73,26 +77,33 @@ copy='<Primary>x'
 
 [org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
 foreground-color='rgb(131,148,150)'
+cjk-utf8-ambiguous-width='narrow'
 visible-name='Badass Programmer Profile'
 palette=['rgb(7,54,66)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(253,246,227)']
 default-size-rows=40
 default-size-columns=120
+cursor-shape='block'
 use-system-font=false
-use-transparent-background=true
 use-theme-colors=false
+use-transparent-background=true
 font='Ubuntu Mono derivative Powerline 14'
 use-theme-transparency=true
 bold-color-same-as-fg=true
 background-color='rgb(0,43,54)'
-background-transparency-percent=9
+background-transparency-percent=4
 
 [org/gnome/settings-daemon/plugins/power]
+idle-dim=true
 sleep-inactive-battery-timeout=300
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
-www='<Super>s'
+screenshot='disabled'
 terminal=''
+www='<Super>s'
+search='<Mod2>Super_L'
+help=''
+area-screenshot='Print'
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Super>a'
@@ -104,8 +115,11 @@ binding='Super_L'
 command='slingscold'
 name='Slingscold'
 
+[org/gnome/settings-daemon/peripherals/wacom/f9c46ef192f04d478ec03fd75dacc2ee-usb:056a:00de]
+area=[-1, -1, -1, -1]
+
 [org/gnome/settings-daemon/peripherals/keyboard]
-numlock-state='off'
+numlock-state='on'
 
 [org/gnome/brasero/plugins/dvd-rw-format]
 priority=0
@@ -164,24 +178,11 @@ priority=0
 [org/gnome/brasero/plugins/vcdimager]
 priority=0
 
-[org/gnome/gedit/preferences/ui]
-statusbar-visible=true
-notebook-show-tabs-mode='always'
+[org/gnome/charmap/window-state]
+size=(1080, 594)
 
-[org/gnome/gedit/plugins/filebrowser]
-virtual-root='file:///home/nhill/.cache/.fr-zjUbbB/Master%20List%20Folder%20copy/propertiesscrapper/propertiesscrapper/static/jqwidgets-ver3.5.0'
-tree-view=false
-root='file:///'
-
-[org/gnome/gedit/plugins]
-active-plugins=['docinfo', 'spell', 'time', 'zeitgeistplugin', 'modelines', 'filebrowser']
-
-[org/gnome/gedit/state/window]
-size=(1366, 744)
-state=4
-bottom-panel-size=140
-side-panel-size=200
-side-panel-active-page=228660812
+[org/gnome/charmap]
+last-char=uint32 201
 
 [org/gnome/calculator]
 target-currency='AUD'
@@ -204,8 +205,12 @@ border-effect='none'
 delay=0
 last-save-directory='file:///home/nhill/Desktop'
 
+[org/gnome/Disks]
+image-dir-uri='file:///home/nhill/Downloads'
+
 [org/gnome/nautilus/window-state]
-geometry='890x494+1030+24'
+sidebar-width=257
+geometry='1251x829+358+93'
 maximized=false
 
 [org/gnome/nautilus/icon-view]
@@ -216,8 +221,20 @@ default-visible-columns=['name', 'size', 'type', 'date_modified']
 use-tree-view=true
 default-column-order=['name', 'size', 'type', 'date_modified', 'date_accessed', 'owner', 'group', 'permissions', 'mime_type', 'where']
 
+[org/gnome/evince]
+document-directory=@ms 'file:///home/nhill/Documents/School/UT,%20Spring%202017/PHY369/Homework'
+
 [org/gnome/evince/default]
-window-ratio=(1.8970588235294117, 0.90404040404040409)
+window-ratio=(2.7450980392156863, 1.2954545454545454)
+continuous=true
+fullscreen=false
+show-sidebar=true
+dual-page-odd-left=false
+inverted-colors=false
+sidebar-page='thumbnails'
+sidebar-size=174
+dual-page=false
+sizing-mode='fit-width'
 
 [org/gnome/file-roller/listing]
 sort-method='name'
@@ -225,6 +242,11 @@ name-column-width=250
 sort-type='ascending'
 list-mode='as-folder'
 show-path=false
+
+[org/gnome/file-roller/dialogs/new]
+default-extension='.tar.gz'
+volume-size=104857
+encrypt-header=false
 
 [org/gnome/file-roller/dialogs/extract]
 skip-newer=false
@@ -243,7 +265,7 @@ migrated=true
 
 [org/gnome/deja-dup]
 backend='file'
-prompt-check='2016-05-04T05:44:32.803033Z'
+prompt-check='disabled'
 
 [org/gnome/deja-dup/file]
 path='/home/nhill/deja-dup'
@@ -255,17 +277,18 @@ gtk-im-module='gtk-im-context-simple'
 scaling-factor=uint32 1
 toolkit-accessibility=false
 cursor-theme='DMZ-White'
-icon-theme='ubuntu-mono-dark'
+icon-theme='Numix-Circle'
 enable-animations=true
-gtk-theme='Ambiance'
+cursor-blink=false
+gtk-theme='Vertex-Dark'
 
 [org/gnome/desktop/applications/terminal]
 exec='gnome-terminal'
 
 [org/gnome/desktop/media-handling]
-autorun-x-content-start-app=@as []
+autorun-x-content-start-app=['x-content/image-dcf']
 autorun-x-content-ignore=@as []
-autorun-x-content-open-folder=@as []
+autorun-x-content-open-folder=['x-content/image-dcf']
 
 [org/gnome/desktop/app-folders]
 folder-children=['Utilities', 'Sundry']
@@ -289,13 +312,20 @@ lock-enabled=true
 [org/gnome/desktop/peripherals/touchpad]
 send-events='enabled'
 
+[org/gnome/desktop/peripherals/keyboard]
+repeat-interval=uint32 97
+delay=uint32 471
+
+[org/gnome/desktop/session]
+idle-delay=uint32 0
+
 [org/gnome/desktop/privacy]
 remember-recent-files=false
 
 [org/gnome/desktop/wm/preferences]
 auto-raise=true
 auto-raise-delay=1000
-theme='Ambiance'
+theme='Vertex-Dark'
 
 [org/gnome/desktop/wm/keybindings]
 toggle-fullscreen=['disabled']
@@ -360,11 +390,60 @@ toggle-on-all-workspaces=['disabled']
 switch-windows=['<Alt>Tab']
 
 [org/gnome/desktop/background]
+picture-uri='file:///usr/share/backgrounds/warty-final-ubuntu.png'
+color-shading-type='solid'
+primary-color='#2c001e'
 picture-options='zoom'
+secondary-color='#2c001e'
 
 [org/gnome/desktop/input-sources]
-sources=[('xkb', 'us')]
+current=uint32 1
+sources=[('xkb', 'us'), ('xkb', 'us+altgr-intl')]
 xkb-options=['ctrl:nocaps']
+
+[org/gnome/simple-scan]
+document-type='photo'
+
+[org/gnome/cheese]
+photo-y-resolution=720
+burst-delay=1000
+video-y-resolution=720
+selected-effect='Kung-Fu'
+camera='Integrated_Webcam_HD'
+photo-x-resolution=1280
+video-x-resolution=1280
+
+[org/gnome/power-manager]
+info-history-type='charge'
+info-stats-type='discharge-accuracy'
+info-last-device='/org/freedesktop/UPower/devices/keyboard_0003o046Do4004x0013'
+info-page-number=0
+
+[org/gnome/gedit/preferences/ui]
+statusbar-visible=true
+notebook-show-tabs-mode='always'
+show-tabs-mode='auto'
+
+[org/gnome/gedit/plugins/filebrowser]
+virtual-root='file:///media/nhill/KINGSTON'
+tree-view=true
+root='file:///'
+
+[org/gnome/gedit/plugins]
+active-plugins=['modelines', 'spell', 'docinfo', 'time', 'filebrowser']
+
+[org/gnome/gedit/state/file-filter]
+filter-id=1
+
+[org/gnome/gedit/state/window]
+size=(1366, 744)
+state=132
+bottom-panel-size=140
+side-panel-size=200
+side-panel-active-page='GeditWindowDocumentsPanel'
+
+[org/gnome/eog/plugins]
+active-plugins=['fullscreen', 'statusbar-date']
 
 [org/gnome/eog/view]
 background-color='rgb(0,0,0)'
@@ -379,6 +458,9 @@ statusbar=true
 toolbar=true
 sidebar=false
 image-gallery=false
+
+[org/gnome/rhythmbox/plugins/daap/source]
+show-browser=true
 
 [org/gnome/rhythmbox/plugins/audioscrobbler/Last.fm]
 scrobbling-enabled=true
@@ -396,9 +478,12 @@ show-browser=true
 active-plugins=['artsearch', 'dbus-media-server', 'audioscrobbler', 'mtpdevice', 'rb', 'daap', 'ipod', 'notification', 'mpris', 'audiocd', 'generic-player', 'mmkeys', 'power-manager', 'iradio', 'android']
 seen-plugins=['grilo', 'artsearch', 'dbus-media-server', 'rblirc', 'soundcloud', 'fmradio', 'audioscrobbler', 'rbzeitgeist', 'replaygain', 'lyrics', 'mtpdevice', 'rb', 'im-status', 'daap', 'ipod', 'notification', 'mpris', 'sendto', 'pythonconsole']
 
+[org/gnome/rhythmbox/plugins/android/source]
+show-browser=true
+
 [org/gnome/rhythmbox/player]
 play-order='shuffle'
-volume=1.0
+volume=0.4999847412109375
 
 [org/gnome/rhythmbox/podcast]
 download-location='file:///home/nhill/Music'
@@ -407,8 +492,9 @@ download-location='file:///home/nhill/Music'
 show-browser=true
 
 [org/gnome/rhythmbox]
-position=(0, 24)
-size=(1228, 639)
+position=(240, 24)
+size=(1680, 1026)
+maximized=true
 
 [org/gnome/rhythmbox/library]
 layout-filename='%tN - %tt'
@@ -418,6 +504,7 @@ layout-path='%aa/%at'
 media-type='audio/x-vorbis'
 
 [org/gnome/rhythmbox/library/source]
+sorting=('Artist', true)
 show-browser=true
 
 [org/gnome/rhythmbox/sources]
@@ -430,39 +517,7 @@ locations=['file:///home/nhill/Music']
 ignore-phase2-ca-cert=false
 ignore-ca-cert=true
 
-[org/gnome/nm-applet/eap/a6701a7e-e17b-4ecf-bd80-8e4232913134]
-ignore-phase2-ca-cert=false
-ignore-ca-cert=false
-
-[org/gnome/nm-applet/eap/158ff8df-4ad5-4c46-8ed0-bb89ea0541fc]
-ignore-phase2-ca-cert=false
-ignore-ca-cert=false
-
-[org/gnome/nm-applet/eap/59c9fddf-8da2-44ae-8fe6-a7493b63775e]
-ignore-phase2-ca-cert=false
-ignore-ca-cert=false
-
-[org/gnome/nm-applet/eap/f47de6de-7b3a-4bfe-bf9a-ab6176c4a84e]
-ignore-phase2-ca-cert=false
-ignore-ca-cert=false
-
-[org/gnome/nm-applet/eap/0fd0e89c-5a6d-4337-8953-0a6e21e21d36]
-ignore-phase2-ca-cert=false
-ignore-ca-cert=false
-
 [org/gnome/nm-applet/eap/1537ebc5-0295-430c-a80c-b2b4369cbaf2]
-ignore-phase2-ca-cert=false
-ignore-ca-cert=false
-
-[org/gnome/nm-applet/eap/5a1d794f-c92e-4327-afbb-76b8230b152e]
-ignore-phase2-ca-cert=false
-ignore-ca-cert=false
-
-[org/gnome/nm-applet/eap/efd76a20-ee30-435f-bc11-469e08a1ba83]
-ignore-phase2-ca-cert=false
-ignore-ca-cert=false
-
-[org/gnome/nm-applet/eap/cfaabab6-796b-42a6-931b-ef28f0fd354c]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
@@ -470,19 +525,11 @@ ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
-[org/gnome/nm-applet/eap/e91e6595-ab2a-471d-9bae-67c761543b19]
+[org/gnome/nm-applet/eap/79585852-d555-4eca-b4a6-ff6635ba649d]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
-[org/gnome/nm-applet/eap/a281ef47-d0c8-4c79-abe9-1bcc7018cfcd]
-ignore-phase2-ca-cert=false
-ignore-ca-cert=false
-
-[org/gnome/nm-applet/eap/bf69dfbe-9b64-4f94-88ca-8ba13476ed62]
-ignore-phase2-ca-cert=false
-ignore-ca-cert=false
-
-[org/gnome/nm-applet/eap/781d7773-73a3-4365-8162-982a610dd130]
+[org/gnome/nm-applet/eap/0c93804b-9aec-4355-868b-63a0f11f313f]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
@@ -490,7 +537,146 @@ ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
+[org/gnome/nm-applet/eap/c0bd871d-d99a-4004-812e-7546ca3df247]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=true
+
+[org/gnome/nm-applet/eap/6a37b5b8-b670-4409-b524-5b7877f6f4e4]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/2a72a12d-0540-4e2a-9ee3-f6d7e82d218a]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/c391101f-9e0e-452d-a492-bcfec68505c6]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/bfae2655-8d37-4784-b97a-3e3e4f542e29]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/5a443407-70a0-454b-b06f-ed55a3e7b3f9]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/5a1d794f-c92e-4327-afbb-76b8230b152e]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/78e81d82-67db-4355-91f7-68a0b2bb7f98]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/59c9fddf-8da2-44ae-8fe6-a7493b63775e]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/a281ef47-d0c8-4c79-abe9-1bcc7018cfcd]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/b4abd3cc-8538-486b-8476-c65fedd61694]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=true
+
+[org/gnome/nm-applet/eap/a6701a7e-e17b-4ecf-bd80-8e4232913134]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/b6ad4c78-c452-45c9-9337-78063a3ad041]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/a9333767-90d5-4c33-ab40-512c6115f0bc]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/e4e60d79-f6ad-4c50-9d17-f05b56ffa095]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/2264c935-b93a-4ea7-aa90-fc4bd39b454a]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/e91e6595-ab2a-471d-9bae-67c761543b19]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/904bc28c-5687-4c7c-82b0-89370bfa5eea]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/0fd0e89c-5a6d-4337-8953-0a6e21e21d36]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/53f3d1a8-6c75-45b7-966e-6c215c97cf8d]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/ddf522db-fa59-44a9-bd6f-28ea2155867f]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/781d7773-73a3-4365-8162-982a610dd130]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/eefde110-aca9-41b7-ba7d-739ea81aec82]
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/efd76a20-ee30-435f-bc11-469e08a1ba83]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/f4133053-65d9-4172-a4f4-48f6a1c91104]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/d5b6a086-933f-41bd-b2bd-a7513bf24681]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
 [org/gnome/nm-applet/eap/770923da-eeda-4499-a481-f431aa8b9a13]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/5e9256cb-68f9-46da-8af6-d113ba6d8133]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/2d50bbbd-1277-4338-b9b8-7ecd97ed99d6]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/22bdc4d7-a67f-4680-94a6-840fea696c93]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/3a289bfa-3175-35da-aabc-97a01d2818cf]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/158ff8df-4ad5-4c46-8ed0-bb89ea0541fc]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/18ecd919-608f-4d03-bad8-ba57165a2194]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/bf69dfbe-9b64-4f94-88ca-8ba13476ed62]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/4a04e0fd-8760-4a00-923c-f8e5f62d9dbb]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/e10042aa-1ca8-4ad7-8cfe-103938b6b585]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
@@ -498,7 +684,39 @@ ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
-[org/gnome/nm-applet/eap/22bdc4d7-a67f-4680-94a6-840fea696c93]
+[org/gnome/nm-applet/eap/7fcfe7aa-2ded-42d0-9be1-f083cc8e297c]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/71d7859b-c2cb-4217-97e6-79df8125b005]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/555a79b9-0ffd-426d-b9e6-5109ee28825f]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/c4142c34-8e65-439b-926b-a6857813803b]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/d06ccae9-d549-41eb-bff9-71a235bdd7b6]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/0828b19e-d03e-48c8-87c7-0af694c5db2d]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/58bf1b99-7a67-4829-9f85-b868f46a54ef]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/cfaabab6-796b-42a6-931b-ef28f0fd354c]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/f47de6de-7b3a-4bfe-bf9a-ab6176c4a84e]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
@@ -507,32 +725,45 @@ subtitle-encoding='UTF-8'
 active-plugins=['save-file', 'movie-properties', 'vimeo', 'skipto', 'screensaver', 'media_player_keys', 'recent', 'autoload-subtitles', 'screenshot', 'apple-trailers']
 
 [org/gnome/gnome-system-monitor]
-show-dependencies=false
 current-tab='resources'
-maximized=false
+network-in-bits=true
 show-whose-processes='user'
 window-state=(700, 500, 65, 50)
+graph-update-interval=1000
+update-interval=3000
+maximized=false
+disks-interval=5000
+cpu-stacked-area-chart=true
+show-dependencies=false
 
 [org/gnome/gnome-system-monitor/disktreenew]
 col-6-visible=true
 col-6-width=0
 
 [org/gnome/software]
-check-timestamp=int64 1462379988
+check-timestamp=int64 1493738541
 
 [org/gtk/settings/file-chooser]
 sort-column='name'
 sidebar-width=148
-window-position=(383, 24)
+window-position=(625, 179)
 show-size-column=true
 show-hidden=false
 window-size=(910, 716)
+sort-directories-first=true
+date-format='regular'
 sort-order='ascending'
 location-mode='path-bar'
 
 [org/compiz]
 existing-profiles=['Default', 'unity']
 current-profile='unity'
+
+[org/compiz/profiles/unity-lowgfx]
+plugins-with-set-keys=['shelf', 'firepaint', 'water', 'shift', 'matecompat', 'mag', 'showmouse', 'resizeinfo', 'snap', 'staticswitcher', 'crashhandler', 'wall', 'switcher', 'gnomecompat', 'session', 'cubeaddon', 'showrepaint', 'animation', 'opengl', 'scalefilter', 'winrules', 'workarounds', 'unitymtgrabhandles', 'titleinfo', 'trailfocus', 'neg', 'widget', 'notification', 'imgjpeg', 'fade', 'unityshell', 'expo', 'addhelper', 'put', 'wizard', 'showdesktop', 'kdecompat', 'move', 'opacify', 'grid', 'maximumize', 'clone', 'resize', 'thumbnail', 'bench', 'mblur', 'screenshot', 'freewins']
+
+[org/compiz/profiles/unity-lowgfx/plugins/core]
+active-plugins=['core', 'composite', 'opengl', 'compiztoolbox', 'vpswitch', 'snap', 'mousepoll', 'resize', 'place', 'move', 'wall', 'grid', 'regex', 'imgpng', 'session', 'animation', 'fade', 'workarounds', 'scale', 'expo', 'ezoom', 'switcher']
 
 [org/compiz/profiles/Default]
 plugins-with-set-keys=['commands', 'thumbnail', 'resize', 'move', 'core', 'composite', 'opengl', 'decor', 'vpswitch', 'snap', 'mousepoll', 'place', 'wall', 'grid', 'session', 'animation', 'fade', 'unitymtgrabhandles', 'workarounds', 'scale', 'expo', 'ezoom', 'unityshell', 'rotate', 'put', 'staticswitcher', 'extrawm', 'ring', 'firepaint', 'titleinfo', 'cubeaddon', 'kdecompat', 'annotate', 'switcher', 'showdesktop', 'addhelper', 'opacify', 'trailfocus', 'crashhandler', 'wallpaper', 'scaleaddon', 'resizeinfo', 'notification', 'showrepaint', 'bench', 'mblur', 'splash', 'winrules', 'wobbly', 'td', 'scalefilter', 'widget', 'cube', 'wizard', 'screenshot', 'shelf', 'clone', 'water', 'mag', 'freewins', 'workspacenames', 'fadedesktop', 'imgjpeg', 'shift', 'maximumize', 'matecompat', 'neg', 'showmouse', 'obs']
@@ -637,6 +868,8 @@ outline-color='#e6e6e6ff'
 
 [org/compiz/profiles/unity/plugins/scale]
 initiate-key='<Super>d'
+initiate-edge='TopLeft|TopRight|BottomLeft|BottomRight'
+x-offset=58
 
 [org/compiz/profiles/unity/plugins/ezoom]
 zoom-box-fill-color='#2f2f2f4f'
@@ -647,8 +880,9 @@ ground-color1='#b3b3b3cc'
 ground-color2='#b3b3b300'
 
 [org/compiz/profiles/unity/plugins/unityshell]
+launcher-minimize-window=false
 show-launcher='Disabled'
-icon-size=48
+icon-size=42
 num-launchers=0
 alt-tab-forward='Disabled'
 inactive-shadow-color='#000000a5'
@@ -693,6 +927,7 @@ expo-key='Disabled'
 ground-color2='#b3b3b300'
 ground-color1='#b3b3b3cc'
 vp-saturation=40.0
+x-offset=58
 
 [org/compiz/profiles/unity/plugins/gnomecompat]
 main-menu-key='Disabled'
@@ -712,6 +947,7 @@ background-color='#333333d9'
 
 [org/compiz/profiles/unity/plugins/core]
 hsize=1
+outputs=['1920x1080+0+1050', '1680x1050+240+0']
 vsize=1
 active-plugins=['core', 'composite', 'opengl', 'imgpng', 'move', 'grid', 'resize', 'place', 'compiztoolbox', 'commands', 'copytex', 'vpswitch', 'mousepoll', 'ring', 'regex', 'snap', 'wall', 'session', 'animation', 'workarounds', 'unitymtgrabhandles', 'fade', 'expo', 'ezoom', 'scale', 'unityshell']
 
@@ -739,14 +975,29 @@ run-command-9=['disabled']
 run-command-8=['disabled']
 show-hud=['disabled']
 
+[org/yorba/shotwell/preferences/ui]
+sidebar-position=281
+display-basic-properties=true
+display-sidebar=true
+show-welcome-dialog=false
+events-sort-ascending=false
+
 [org/yorba/shotwell/preferences/window]
 direct-maximize=false
 direct-height=716
 direct-width=1024
+library-height=1026
+library-width=1680
+library-maximize=true
+
+[org/yorba/shotwell/crop-settings]
+last-crop-height=1
+last-crop-width=1
+last-crop-menu-choice=0
 
 [apps/update-manager]
 first-run=false
-launch-time=1445370500
+launch-time=int64 1493777541
 
 [apps/indicator-session]
 show-real-name-on-panel=false
@@ -759,37 +1010,45 @@ show-time=true
 show-percentage=true
 
 [com/canonical/indicator/datetime]
-show-date=false
 show-day=true
-show-calendar=true
-time-format='12-hour'
-show-auto-detected-location=false
 timezone-name='America/Chicago Austin'
+show-date=false
+time-format='12-hour'
+show-week-numbers=true
+show-year=false
+show-calendar=true
+show-auto-detected-location=false
 
 [com/canonical/indicator/keyboard]
 migrated=true
 
 [com/canonical/indicator/sound]
 interested-media-players=['rhythmbox.desktop', 'vlc.desktop']
+visible=true
 
 [com/canonical/unity]
-minimize-count=54
+minimize-count=65
+
+[com/canonical/unity/devices]
+blacklist=@as []
 
 [com/canonical/unity/interface]
 text-scale-factor=1.0
 app-fallback-to-maximum-scale-factor=false
 
 [com/canonical/unity/launcher]
-favorites=['application://org.gnome.Nautilus.desktop', 'application://firefox.desktop', 'application://unity-control-center.desktop', 'application://gnome-terminal.desktop', 'application://transmission-gtk.desktop', 'unity://expo-icon', 'unity://running-apps', 'unity://devices', 'application://gedit.desktop', 'application://google-chrome.desktop', 'application://gnome-calculator.desktop', 'application://rhythmbox.desktop']
+favorites=['application://org.gnome.Nautilus.desktop', 'application://firefox.desktop', 'application://unity-control-center.desktop', 'application://unity-tweak-tool.desktop', 'application://gnome-terminal.desktop', 'unity://expo-icon', 'unity://running-apps', 'unity://devices', 'application://rhythmbox.desktop', 'application://audacity.desktop', 'application://gimp.desktop', 'application://inkscape.desktop', 'application://blender.desktop', 'application://wolfram-mathematica11.desktop']
 
 [com/canonical/unity/lenses]
 remote-content-search='none'
 
 [com/ubuntu/update-notifier]
+regular-auto-launch-interval=14
 release-check-time=uint32 1449081712
+no-show-notifications=true
 
 [com/ubuntu/user-interface]
-scale-factor={'eDP1': 8}
+scale-factor={'eDP1': 8, 'HDMI1': 8}
 
 [com/ubuntu/sound]
 allow-amplified-volume=false
