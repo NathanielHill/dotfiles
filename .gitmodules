@@ -53,6 +53,3 @@
 	path = vim/bundle/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons.git
 	ignore = dirty
-[submodule "vim/bundle/vim-latex-live-preview"]
-	path = vim/bundle/vim-latex-live-preview
-	url = https://github.com/xuhdev/vim-latex-live-preview.git
