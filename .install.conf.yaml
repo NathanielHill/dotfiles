@@ -16,6 +16,7 @@
     ~/.fonts: fonts/
     ~/.vim: vim/
 
+    ~/.config/inkscape/icons/icons.svg: config/inkscape/icons/icons.svg
     ~/.config/fish/config.fish: config/fish/config.fish
     ~/.bash_profile: bash_profile
     ~/.bash_logout: bash_logout
