@@ -23,6 +23,7 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
     ~/.tmux.conf: tmux.conf
+    ~/.gnuplot: gnuplot
     ~/.inputrc: inputrc
     ~/.bashrc: bashrc
     ~/.toprc: toprc
