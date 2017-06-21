@@ -3,8 +3,9 @@ use-same-proxy=false
 
 [de/mh21/indicator-multiload/general]
 background-color='traditional:background'
-indicator-expression-index=0
+indicator-expression-index=1
 color-scheme='traditional'
+indicator-expressions=@as []
 settings-version=uint32 3
 
 [de/mh21/indicator-multiload/graphs/cpu/cpu1]
@@ -210,7 +211,7 @@ image-dir-uri='file:///home/nhill/Downloads'
 
 [org/gnome/nautilus/window-state]
 sidebar-width=257
-geometry='1251x829+358+93'
+geometry='1517x708+0+343'
 maximized=false
 
 [org/gnome/nautilus/icon-view]
@@ -222,10 +223,10 @@ use-tree-view=true
 default-column-order=['name', 'size', 'type', 'date_modified', 'date_accessed', 'owner', 'group', 'permissions', 'mime_type', 'where']
 
 [org/gnome/evince]
-document-directory=@ms 'file:///home/nhill/Documents/School/UT,%20Spring%202017/PHY369/Homework'
+document-directory=@ms nothing
 
 [org/gnome/evince/default]
-window-ratio=(2.7450980392156863, 1.2954545454545454)
+window-ratio=(3.1442622950819672, 1.2547288776796974)
 continuous=true
 fullscreen=false
 show-sidebar=true
@@ -244,7 +245,7 @@ list-mode='as-folder'
 show-path=false
 
 [org/gnome/file-roller/dialogs/new]
-default-extension='.tar.gz'
+default-extension='.zip'
 volume-size=104857
 encrypt-header=false
 
@@ -402,13 +403,15 @@ sources=[('xkb', 'us'), ('xkb', 'us+altgr-intl')]
 xkb-options=['ctrl:nocaps']
 
 [org/gnome/simple-scan]
+save-directory='/home/nhill/Documents/School/UT, Spring 2017/SPN601D/CourseWork'
+selected-device='pixma:04A9176B_35711C'
 document-type='photo'
 
 [org/gnome/cheese]
 photo-y-resolution=720
 burst-delay=1000
 video-y-resolution=720
-selected-effect='Kung-Fu'
+selected-effect='No Effect'
 camera='Integrated_Webcam_HD'
 photo-x-resolution=1280
 video-x-resolution=1280
@@ -425,7 +428,7 @@ notebook-show-tabs-mode='always'
 show-tabs-mode='auto'
 
 [org/gnome/gedit/plugins/filebrowser]
-virtual-root='file:///media/nhill/KINGSTON'
+virtual-root='file:///home/nhill/.config/RescueTime.com'
 tree-view=true
 root='file:///'
 
@@ -436,7 +439,7 @@ active-plugins=['modelines', 'spell', 'docinfo', 'time', 'filebrowser']
 filter-id=1
 
 [org/gnome/gedit/state/window]
-size=(1366, 744)
+size=(1362, 686)
 state=132
 bottom-panel-size=140
 side-panel-size=200
@@ -459,6 +462,72 @@ toolbar=true
 sidebar=false
 image-gallery=false
 
+[org/gnome/gthumb/browser]
+startup-location='file://~/Projects/PhotoCorrectionTesting/aluminum%20planters'
+thumbnail-list-visible=true
+sort-type='file::mtime'
+thumbnail-list-size=114
+sidebar-visible=true
+viewer-sidebar='hidden'
+sort-inverse=false
+maximized=true
+startup-current-file='file://~/Projects/PhotoCorrectionTesting/aluminum%20planters/2013-04-22%2016.36.26.jpg'
+go-to-last-location=true
+use-startup-location=false
+statusbar-visible=true
+
+[org/gnome/gthumb/general]
+active-extensions=['contact_sheet', 'picasaweb', 'slideshow', 'find_duplicates', 'resize_images', 'facebook', 'catalogs', 'webalbums', 'photobucket', 'image_print', 'rename_series', 'gstreamer_tools', 'edit_metadata', 'selections', '23hq', 'bookmarks', 'search', 'photo_importer', 'change_date', 'file_manager', 'raw_files', 'convert_format', 'exiv2_tools', 'list_tools', 'flicker', 'comments', 'red_eye_removal', 'image_rotation', 'desktop_background']
+store-metadata-in-files=true
+
+[org/gnome/gthumb/pixbuf-savers/png]
+compression-level=6
+
+[org/gnome/gthumb/pixbuf-savers/tga]
+rle-compression=true
+
+[org/gnome/gthumb/pixbuf-savers/tiff]
+compression='deflate'
+horizontal-resolution=72
+default-ext='tiff'
+vertical-resolution=72
+
+[org/gnome/gthumb/pixbuf-savers/jpeg]
+smoothing=0
+progressive=false
+optimize=true
+default-ext='jpeg'
+quality=85
+
+[org/gnome/gthumb/pixbuf-savers/webp]
+method=4
+lossless=false
+quality=75
+
+[org/gnome/gthumb/image-print]
+font-name='Sans 12'
+footer-font-name='Sans 8'
+header-font-name='Sans Bold 12'
+
+[org/gnome/gthumb/data-migration]
+catalogs-2-10=true
+
+[org/gnome/rhythmbox]
+position=(0, 24)
+size=(1680, 1026)
+display-page-tree-visible=true
+maximized=true
+
+[org/gnome/rhythmbox/player]
+play-order='shuffle'
+volume=0.4999847412109375
+
+[org/gnome/rhythmbox/podcast]
+download-location='file:///home/nhill/Music'
+
+[org/gnome/rhythmbox/podcast/source]
+show-browser=true
+
 [org/gnome/rhythmbox/plugins/daap/source]
 show-browser=true
 
@@ -472,6 +541,7 @@ scrobbling-enabled=true
 initial-stations-loaded=true
 
 [org/gnome/rhythmbox/plugins/iradio/source]
+paned-position=222
 show-browser=true
 
 [org/gnome/rhythmbox/plugins]
@@ -480,21 +550,6 @@ seen-plugins=['grilo', 'artsearch', 'dbus-media-server', 'rblirc', 'soundcloud',
 
 [org/gnome/rhythmbox/plugins/android/source]
 show-browser=true
-
-[org/gnome/rhythmbox/player]
-play-order='shuffle'
-volume=0.4999847412109375
-
-[org/gnome/rhythmbox/podcast]
-download-location='file:///home/nhill/Music'
-
-[org/gnome/rhythmbox/podcast/source]
-show-browser=true
-
-[org/gnome/rhythmbox]
-position=(240, 24)
-size=(1680, 1026)
-maximized=true
 
 [org/gnome/rhythmbox/library]
 layout-filename='%tN - %tt'
@@ -529,7 +584,7 @@ ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
-[org/gnome/nm-applet/eap/0c93804b-9aec-4355-868b-63a0f11f313f]
+[org/gnome/nm-applet/eap/320a4879-9204-40f8-8a91-00a2aae2b604]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
@@ -537,9 +592,9 @@ ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
-[org/gnome/nm-applet/eap/c0bd871d-d99a-4004-812e-7546ca3df247]
+[org/gnome/nm-applet/eap/0c93804b-9aec-4355-868b-63a0f11f313f]
 ignore-phase2-ca-cert=false
-ignore-ca-cert=true
+ignore-ca-cert=false
 
 [org/gnome/nm-applet/eap/6a37b5b8-b670-4409-b524-5b7877f6f4e4]
 ignore-phase2-ca-cert=false
@@ -617,22 +672,26 @@ ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
-[org/gnome/nm-applet/eap/ddf522db-fa59-44a9-bd6f-28ea2155867f]
+[org/gnome/nm-applet/eap/c0bd871d-d99a-4004-812e-7546ca3df247]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=true
+
+[org/gnome/nm-applet/eap/781d7773-73a3-4365-8162-982a610dd130]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
-[org/gnome/nm-applet/eap/781d7773-73a3-4365-8162-982a610dd130]
+[org/gnome/nm-applet/eap/ddf522db-fa59-44a9-bd6f-28ea2155867f]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
 [org/gnome/nm-applet/eap/eefde110-aca9-41b7-ba7d-739ea81aec82]
 ignore-ca-cert=false
 
-[org/gnome/nm-applet/eap/efd76a20-ee30-435f-bc11-469e08a1ba83]
+[org/gnome/nm-applet/eap/f4133053-65d9-4172-a4f4-48f6a1c91104]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
-[org/gnome/nm-applet/eap/f4133053-65d9-4172-a4f4-48f6a1c91104]
+[org/gnome/nm-applet/eap/efd76a20-ee30-435f-bc11-469e08a1ba83]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
@@ -681,6 +740,10 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
 [org/gnome/nm-applet/eap/b8e50bcb-3ac6-40ed-aa08-c2c39c788baa]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/nm-applet/eap/c2585477-9680-4adb-8749-6a10eea9021f]
 ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
@@ -741,12 +804,12 @@ col-6-visible=true
 col-6-width=0
 
 [org/gnome/software]
-check-timestamp=int64 1493738541
+check-timestamp=int64 1498056287
 
 [org/gtk/settings/file-chooser]
 sort-column='name'
 sidebar-width=148
-window-position=(625, 179)
+window-position=(505, 194)
 show-size-column=true
 show-hidden=false
 window-size=(910, 716)
@@ -883,7 +946,7 @@ ground-color2='#b3b3b300'
 launcher-minimize-window=false
 show-launcher='Disabled'
 icon-size=42
-num-launchers=0
+num-launchers=1
 alt-tab-forward='Disabled'
 inactive-shadow-color='#000000a5'
 alt-tab-prev='Disabled'
@@ -947,7 +1010,7 @@ background-color='#333333d9'
 
 [org/compiz/profiles/unity/plugins/core]
 hsize=1
-outputs=['1920x1080+0+1050', '1680x1050+240+0']
+outputs=['1920x1080+0+0']
 vsize=1
 active-plugins=['core', 'composite', 'opengl', 'imgpng', 'move', 'grid', 'resize', 'place', 'compiztoolbox', 'commands', 'copytex', 'vpswitch', 'mousepoll', 'ring', 'regex', 'snap', 'wall', 'session', 'animation', 'workarounds', 'unitymtgrabhandles', 'fade', 'expo', 'ezoom', 'scale', 'unityshell']
 
@@ -997,7 +1060,7 @@ last-crop-menu-choice=0
 
 [apps/update-manager]
 first-run=false
-launch-time=int64 1493777541
+launch-time=int64 1496075098
 
 [apps/indicator-session]
 show-real-name-on-panel=false
@@ -1012,7 +1075,7 @@ show-percentage=true
 [com/canonical/indicator/datetime]
 show-day=true
 timezone-name='America/Chicago Austin'
-show-date=false
+show-date=true
 time-format='12-hour'
 show-week-numbers=true
 show-year=false
@@ -1027,7 +1090,7 @@ interested-media-players=['rhythmbox.desktop', 'vlc.desktop']
 visible=true
 
 [com/canonical/unity]
-minimize-count=65
+minimize-count=98
 
 [com/canonical/unity/devices]
 blacklist=@as []
@@ -1037,7 +1100,7 @@ text-scale-factor=1.0
 app-fallback-to-maximum-scale-factor=false
 
 [com/canonical/unity/launcher]
-favorites=['application://org.gnome.Nautilus.desktop', 'application://firefox.desktop', 'application://unity-control-center.desktop', 'application://unity-tweak-tool.desktop', 'application://gnome-terminal.desktop', 'unity://expo-icon', 'unity://running-apps', 'unity://devices', 'application://rhythmbox.desktop', 'application://audacity.desktop', 'application://gimp.desktop', 'application://inkscape.desktop', 'application://blender.desktop', 'application://wolfram-mathematica11.desktop']
+favorites=['application://org.gnome.Nautilus.desktop', 'application://firefox.desktop', 'application://google-chrome.desktop', 'application://unity-control-center.desktop', 'application://unity-tweak-tool.desktop', 'application://gnome-terminal.desktop', 'unity://expo-icon', 'application://rhythmbox.desktop', 'application://lmms.desktop', 'application://gimp.desktop', 'application://inkscape.desktop', 'application://blender.desktop', 'application://wolfram-mathematica11.desktop', 'unity://devices', 'unity://running-apps', 'application://vlc.desktop', 'application://simple-scan.desktop']
 
 [com/canonical/unity/lenses]
 remote-content-search='none'
@@ -1048,7 +1111,7 @@ release-check-time=uint32 1449081712
 no-show-notifications=true
 
 [com/ubuntu/user-interface]
-scale-factor={'eDP1': 8, 'HDMI1': 8}
+scale-factor={'HDMI1': 8, 'eDP1': 8}
 
 [com/ubuntu/sound]
 allow-amplified-volume=false
