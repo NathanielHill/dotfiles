@@ -20,6 +20,7 @@
     ~/.config/fish/config.fish: config/fish/config.fish
     ~/.bash_profile: bash_profile
     ~/.bash_logout: bash_logout
+    ~/.latexmkrc: latexmkrc
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
     ~/.tmux.conf: tmux.conf
