@@ -8,14 +8,24 @@ set loadpath '/usr/local/lib/gnuplot'
 set grid back ls 0
 
 # add default line colors
-set linetype 1 lc rgb 'blue' lw 2 pt 5 ps 0.5           # blue
-set linetype 2 lc rgb 'forest-green' lw 1 pt 7 ps 0.5   # green
-set linetype 3 lc rgb 'red' lw 1 pt 7 ps 0.5            # red
+set linetype 1 lc rgb 'orange'  lw 2 pt 7 ps 0.5          # orange
+set linetype 2 lc rgb 'red'     lw 1 pt 7 ps 0.5          # red
+set linetype 3 lc rgb 'blue'    lw 1 pt 7 ps 0.5          # blue
+set linetype 4 lc rgb 'yellow'  lw 1 pt 7 ps 0.5          # yellow
+set linetype 5 lc rgb 'green'   lw 1 pt 7 ps 0.5          # green
+set linetype 6 lc rgb 'purple'  lw 1 pt 7 ps 0.5          # purple
+set linetype 7 lc rgb 'blue'    lw 1 pt 7 ps 0.5          # blue
+set linetype 8 lc rgb 'blue'    lw 1 pt 7 ps 0.5          # blue
 
 # add macros to select the desired line style
-BLUE = "1"
-GREEN = "2"
-RED = "3"
+ORANGE= "1"
+RED = "2"
+ORANGE = "3"
+YELLOW = "4"
+GREEN = "5"
+PURPLE = "6"
+BLUE = "7"
+
 
 # add macros to select a desired terminal
 WXT = "set terminal wxt size 350,262 enhanced font 'Verdana,10' persist"
