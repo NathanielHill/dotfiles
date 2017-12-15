@@ -20,7 +20,7 @@ set linetype 8 lc rgb 'blue'    lw 1 pt 7 ps 0.5          # blue
 # add macros to select the desired line style
 ORANGE= "1"
 RED = "2"
-ORANGE = "3"
+BLUE = "3"
 YELLOW = "4"
 GREEN = "5"
 PURPLE = "6"
