@@ -187,7 +187,7 @@ nnoremap <C-o> :let b:PlugView=winsaveview()<CR>gg=G:call winrestview(b:PlugView
 " the position I left Insert mode from
 :inoremap <silent> <Esc> <Esc>`^
 
-let jshint2_save = 1
+"let jshint2_save = 1
 
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
@@ -195,12 +195,14 @@ let jshint2_save = 1
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_ignore_files = ['tex']
 
-let g:syntastic_javascript_checkers=['jscs']
+let g:syntastic_javascript_checkers=['eslint']
 
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+"
 :nnoremap <C-e> :update<CR>:Bdelete<CR>
 :vnoremap <C-e> :update<CR>:Bdelete<CR>
 :inoremap <C-e> :update<CR>:Bdelete<CR>
