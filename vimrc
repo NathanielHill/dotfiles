@@ -54,7 +54,7 @@ colorscheme solarized
 set encoding=utf8
 set number
 set hidden
-" set mouse=a
+set mouse=a
 
 " let g:nerdtree_tabs_open_on_console_startup=1
 set autochdir
@@ -209,4 +209,4 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " Use the X11 clipboard to seamlessly copy past between Vim and GUI
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
