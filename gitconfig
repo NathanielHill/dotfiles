@@ -3,6 +3,6 @@ editor = vim
 excludesfile = ~/.gitignore
 [user]
 name = Nathaniel Hill
-email = nathanielhill@utexas.edu
+email = nata@goguna.com
 [push]
 default = simple
