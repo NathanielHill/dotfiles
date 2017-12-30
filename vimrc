@@ -3,9 +3,11 @@ set shell=/bin/bash
 
 " set rtp+=/home/nhill/.local/lib/python2.7/site-packages/bindings/vim
 
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+if !has('nvim')
+    python3 from powerline.vim import setup as powerline_setup
+    python3 powerline_setup()
+    python3 del powerline_setup
+endif
 
 " To disable a plugin, add it's bundle name to the following list
 " Temporarily disabling vimtex until I have time to configure it
