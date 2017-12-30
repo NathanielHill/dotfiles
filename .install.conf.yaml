@@ -11,6 +11,7 @@
     ~/.config/fish/completions: config/fish/completions/
     ~/.config/fish/functions: config/fish/functions/
     ~/.config/powerline: config/powerline/
+    ~/.config/nvim: config/nvim/
     ~/.local/scripts: scripts/
     ~/.tmuxinator: tmuxinator/
     ~/.fonts: fonts/
