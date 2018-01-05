@@ -62,6 +62,7 @@ set mouse=a
 set autochdir
 let NERDTreeChDirMode=2
 nnoremap <F3> :NERDTreeToggle<CR>
+let g:NERDTreeWinSize=40
 let g:NERDTreeDirArrows=1
 let g:NERDTreeDirArrowExpandable='▸'
 let g:NERDTreeDirArrowCollapsible='▾'
