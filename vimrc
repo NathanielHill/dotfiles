@@ -4,9 +4,9 @@ set shell=/bin/bash
 " set rtp+=/home/nhill/.local/lib/python2.7/site-packages/bindings/vim
 
 if !has('nvim')
-    python3 from powerline.vim import setup as powerline_setup
-    python3 powerline_setup()
-    python3 del powerline_setup
+  python3 from powerline.vim import setup as powerline_setup
+  python3 powerline_setup()
+  python3 del powerline_setup
 endif
 
 " To disable a plugin, add it's bundle name to the following list
@@ -49,7 +49,7 @@ let g:solarized_contrast="high"
 "  set background=dark
 " endif
 
-set background=dark
+set background=light
 
 colorscheme solarized
 
@@ -82,7 +82,7 @@ set relativenumber
 let g:closetag_filenames = "*.xml, *.svg, *.html,*.xhtml,*.phtml"
 
 set list
-set listchars=eol:¬,trail:~,tab:▸\ ,precedes:«,extends:»
+set listchars=trail:~,tab:▸\ ,precedes:«,extends:»
 set nowrap
 
 " Invisible character colors 
@@ -112,7 +112,7 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
 
 " set noexpandtab
 " set shiftwidth=3
@@ -121,18 +121,18 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 let NERDTreeIgnore = ['\.pyc$','__pycache__','__init__']
 
 function! NERDTreeStartUp()
-    if getcwd() =~ "/home/nhill/Projects"
-        NERDTree
-        if getcwd() =~ "/home/nhill/Projects/arclight"
-            let @a = ":NERDTreeFocusPOBjouBP"
-            normal @a
-            let @a = ''
-        endif
-        " why doesn't this work?
-        let @b = ":NERDTreeFocus"
-        normal @b
-        let @b = ''
+  if getcwd() =~ "/home/nhill/Projects"
+    NERDTree
+    if getcwd() =~ "/home/nhill/Projects/arclight"
+      let @a = ":NERDTreeFocusPOBjouBP"
+      normal @a
+      let @a = ''
     endif
+    " why doesn't this work?
+    let @b = ":NERDTreeFocus"
+    normal @b
+    let @b = ''
+  endif
 endfunction
 " autocmd VimEnter * call NERDTreeStartUp()
 
@@ -146,10 +146,10 @@ imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" 
 smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : 
 let g:neocomplcache_force_overwrite_completefunc = 1
 if !exists('g:neocomplcache_omni_functions')
-    let g:neocomplcache_omni_functions = {}
+  let g:neocomplcache_omni_functions = {}
 endif
 if !exists('g:neocomplcache_force_omni_patterns')
-    let g:neocomplcache_force_omni_patterns = {}
+  let g:neocomplcache_force_omni_patterns = {}
 endif
 let g:neocomplcache_force_overwrite_completefunc = 1
 let g:neocomplcache_force_omni_patterns['python'] = '[^. \t]\.\w*'
