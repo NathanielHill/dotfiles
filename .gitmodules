@@ -65,3 +65,6 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "vim/bundle/vim-styled-jsx"]
+	path = vim/bundle/vim-styled-jsx
+	url = https://github.com/alampros/vim-styled-jsx.git
