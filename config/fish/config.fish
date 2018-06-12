@@ -76,4 +76,4 @@ eval (python3 -m virtualfish auto_activation global_requirements projects)
 
 set fish_greeting ""
 
-set --universal fish_user_paths ~/.local/scripts ~/.local/bin node_modules/.bin
+set --universal fish_user_paths ~/.local/scripts ~/.local/bin node_modules/.bin ~/.yarn/bin
