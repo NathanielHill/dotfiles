@@ -8,4 +8,4 @@ alias du="du -h"
 
 source ~/.bash_profile
 
-cat /dev/null > ~/.bash_history && history -c && exit
+#cat /dev/null > ~/.bash_history && history -c && exit
