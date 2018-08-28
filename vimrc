@@ -1,24 +1,50 @@
 " To avoid people writing bad shell scripts that aren't fish compatible
 set shell=/bin/bash
 
-" set rtp+=/home/nhill/.local/lib/python2.7/site-packages/bindings/vim
-
-if !has('nvim')
-  python3 from powerline.vim import setup as powerline_setup
-  python3 powerline_setup()
-  python3 del powerline_setup
-endif
-
-" To disable a plugin, add it's bundle name to the following list
-" Temporarily disabling vimtex until I have time to configure it
-let g:pathogen_disabled = ['vimtex']
-
 " Pathogen
+filetype off
 execute pathogen#infect()
 call pathogen#helptags() " generate helptags for everything in 'runtimepath'
 
+" To disable a plugin, add it's bundle name to the following list
+" Temporarily disabling vimtex until I have time to configure it
+let g:pathogen_disabled = []
+
+" Avoid linter conflict, set standard as only linter for javascript
+let g:ale_linters = { 'javascript': ['standard'], }
+
+" Automatic standardjs formatting on save
+autocmd bufwritepost *.js silent !standard --fix %
+set autoread
+
+let mapleader = ","
+set showcmd
+
 syntax on
 filetype plugin indent on
+set nocompatible
+set modelines=0
+
+" ALE settings
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '>'
+let g:ale_sign_warning = '-'
+
+set conceallevel=1
+
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_null                 = "ø"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "⇚"
+let g:javascript_conceal_undefined            = "¿"
+let g:javascript_conceal_NaN                  = "ℕ"
+let g:javascript_conceal_prototype            = "¶"
+let g:javascript_conceal_static               = "•"
+let g:javascript_conceal_super                = "Ω"
+let g:javascript_conceal_arrow_function       = "⇒   "
+let g:javascript_conceal_noarg_arrow_function = "🞅"
+let g:javascript_conceal_underscore_arrow_function = "🞅"
+
 set autoindent
 nnoremap ; :
 map <C-h> <C-w>h
@@ -42,13 +68,6 @@ set scrolloff=999
 let g:solarized_termtrans=1
 let g:solarized_contrast="high"
 
-" let hour = strftime("%H")
-" if 6 <= hour && hour < 18
-"  set background=light
-" else
-"  set background=dark
-" endif
-
 set background=light
 
 colorscheme solarized
@@ -58,6 +77,7 @@ set number
 set hidden
 set mouse=a
 
+map <Leader>n :NERDTreeToggle<CR>
 " let g:nerdtree_tabs_open_on_console_startup=1
 set autochdir
 let NERDTreeChDirMode=2
@@ -72,14 +92,14 @@ let NERDTreeShowHidden=0
 " let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
 let NERDTreeStatusline=""
 
+let NERDTreeIgnore = ['\.pyc$','__pycache__','__init__']
+
+
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 set relativenumber
-
-" filenames like *.xml, *.html, *.xhtml, ...
-let g:closetag_filenames = "*.xml, *.svg, *.html,*.xhtml,*.phtml"
 
 set list
 set listchars=trail:~,tab:▸\ ,precedes:«,extends:»
@@ -118,48 +138,6 @@ set tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
 " set shiftwidth=3
 " set tabstop=3
 
-let NERDTreeIgnore = ['\.pyc$','__pycache__','__init__']
-
-function! NERDTreeStartUp()
-  if getcwd() =~ "/home/nhill/Projects"
-    NERDTree
-    if getcwd() =~ "/home/nhill/Projects/arclight"
-      let @a = ":NERDTreeFocusPOBjouBP"
-      normal @a
-      let @a = ''
-    endif
-    " why doesn't this work?
-    let @b = ":NERDTreeFocus"
-    normal @b
-    let @b = ''
-  endif
-endfunction
-" autocmd VimEnter * call NERDTreeStartUp()
-
-" Autocomplete
-
-" NEOCOMPLCACHE SETTINGS
-" This screws up exiting Inster Mode via ESC when there's an autocomplete in
-" process :()
-let g:neocomplcache_enable_at_startup = 1 
-imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : 
-let g:neocomplcache_force_overwrite_completefunc = 1
-if !exists('g:neocomplcache_omni_functions')
-  let g:neocomplcache_omni_functions = {}
-endif
-if !exists('g:neocomplcache_force_omni_patterns')
-  let g:neocomplcache_force_omni_patterns = {}
-endif
-let g:neocomplcache_force_overwrite_completefunc = 1
-let g:neocomplcache_force_omni_patterns['python'] = '[^. \t]\.\w*'
-set ofu=syntaxcomplete#Complete
-" Have to fix this!! (:echo has('python') returns 0 :(
-" au FileType python set omnifunc=pythoncomplete#Complete
-au FileType python let b:did_ftplugin = 1
-" Vim-jedi settings
-let g:jedi#popup_on_dot = 0
-
 set foldmethod=indent
 
 " This isn't working! Need to have all folds unfolded on file open
@@ -185,24 +163,6 @@ let g:AutoCloseExpandEnterOn = "{"
 nnoremap <C-o> :let b:PlugView=winsaveview()<CR>gg=G:call winrestview(b:PlugView) <CR>:echo "file indented"<CR>
 :vnoremap <C-o> <C-C>:let b:PlugView=winsaveview()<CR>gg=G:call winrestview(b:PlugView) <CR>:echo "file indented"<CR>v
 :inoremap <C-o> <C-C>:let b:PlugView=winsaveview()<CR>gg=G:call winrestview(b:PlugView) <CR>:echo "file indented"<CR>i
-
-" Since I primarily enter Insert mode via 'i', this puts the cursor back in
-" the position I left Insert mode from
-:inoremap <silent> <Esc> <Esc>`^
-
-"let jshint2_save = 1
-
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_ignore_files = ['tex']
-
-let g:syntastic_javascript_checkers=['eslint']
 
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 "
