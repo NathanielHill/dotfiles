@@ -154,7 +154,7 @@ autocmd FileType nerdtree setlocal nolist
 let NERDTreeShowHidden=0
 let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
 
-let NERDTreeIgnore = ['\.pyc$','__pycache__','__init__']
+let NERDTreeIgnore = ['coverage', 'node_modules']
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
