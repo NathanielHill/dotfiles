@@ -61,7 +61,7 @@ map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 let g:EasyMotion_smartcase = 1
 
-set scrolloff=999
+set scrolloff=10
 
 " Solarized settings
 " let g:solarized_visibility="low"
@@ -93,7 +93,6 @@ let NERDTreeShowHidden=0
 let NERDTreeStatusline=""
 
 let NERDTreeIgnore = ['\.pyc$','__pycache__','__init__']
-
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
@@ -152,11 +151,6 @@ au BufWinEnter * normal zR
 :nnoremap <silent> <C-S>          :update<CR>
 :vnoremap <silent> <C-S>         <C-C>:update<CR>
 :inoremap <silent> <C-S>         <C-O>:update<CR>
-
-"Adding #{} to AutoClose Plugin and activating it for String interpolation
-let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}', '{{': '}}'}
-let g:AutoCloseProtectedRegions = ["Character"]
-let g:AutoCloseExpandEnterOn = "{"
 
 " Remaps Ctrl-O to do a full re-indent of the entire current buffer in Insert,
 " Normal and Visual mode :)
