@@ -47,7 +47,6 @@ set gdefault
 set incsearch
 set showmatch
 set hlsearch
-nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
@@ -83,10 +82,12 @@ nnoremap ; :
 au FocusLost * :wa
 
 nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.vimrc<cr>
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <Leader>n :NERDTreeToggle<CR>
+nnoremap <leader><space> :noh<cr>
+nnoremap <leader>d :silent !google-chrome --user-data-dir=/tmp/vscode-chrome-debug-userdatadir_9222/ --no-first-run --no-default-browser-check --remote-debugging-port=9222 chrome://inspect &> /dev/null &<cr>
 
 inoremap jj <ESC>
-
-nnoremap <leader>w <C-w>v<C-w>l
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -143,7 +144,6 @@ colorscheme solarized
 
 set mouse=a
 
-map <Leader>n :NERDTreeToggle<CR>
 set autochdir
 let NERDTreeChDirMode=2
 let g:NERDTreeWinSize=40
