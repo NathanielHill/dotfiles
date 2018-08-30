@@ -82,12 +82,13 @@ nnoremap ; :
 au FocusLost * :wa
 
 nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.vimrc<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <leader><space> :noh<cr>
 nnoremap <leader>d :silent !google-chrome --user-data-dir=/tmp/vscode-chrome-debug-userdatadir_9222/ --no-first-run --no-default-browser-check --remote-debugging-port=9222 chrome://inspect &> /dev/null &<cr>
 
-inoremap jj <ESC>
+inoremap jk <ESC>
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -113,17 +114,14 @@ set conceallevel=1
 let g:javascript_conceal_function             = "ƒ"
 let g:javascript_conceal_null                 = "ø"
 let g:javascript_conceal_this                 = "@"
-let g:javascript_conceal_return               = "⇚"
+let g:javascript_conceal_return               = "↲"
 let g:javascript_conceal_undefined            = "¿"
 let g:javascript_conceal_NaN                  = "ℕ"
 let g:javascript_conceal_prototype            = "¶"
 let g:javascript_conceal_static               = "•"
 let g:javascript_conceal_super                = "Ω"
-let g:javascript_conceal_arrow_function       = "⇒   "
+" let g:javascript_conceal_arrow_function     = "⇒"
 let g:javascript_conceal_noarg_arrow_function = "🞅"
-let g:javascript_conceal_underscore_arrow_function = "🞅"
-
-inoremap <C-n> ñ
 
 " Easy motion mapings
 nmap s <Plug>(easymotion-s)
@@ -138,7 +136,7 @@ let g:solarized_visibility="low"
 let g:solarized_termtrans=1
 let g:solarized_contrast="high"
 
-set background=light
+set background=dark
 
 colorscheme solarized
 
