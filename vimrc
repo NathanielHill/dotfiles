@@ -47,15 +47,16 @@ set gdefault
 set incsearch
 set showmatch
 set hlsearch
-nnoremap <tab> %
-vnoremap <tab> %
+" nnoremap <tab> %
+" vnoremap <tab> %
 
-set wrap
-set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
+set formatoptions+=t
+set wrap linebreak
+set textwidth=80
+set colorcolumn=80
 
-set list
+set nolist
 set listchars=trail:~,tab:▸\ ,precedes:«,extends:»
 
 " Invisible character colors
@@ -86,7 +87,27 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <leader><space> :noh<cr>
-nnoremap <leader>d :silent !google-chrome --user-data-dir=/tmp/vscode-chrome-debug-userdatadir_9222/ --no-first-run --no-default-browser-check --remote-debugging-port=9222 chrome://inspect &> /dev/null &<cr>
+nnoremap <leader>d :silent !rm -rf /tmp/vim-chrome && mkdir /tmp/vim-chrome/ && google-chrome --user-data-dir=/tmp/vim-chrome/ --no-first-run --no-default-browser-check http://localhost:3000 &> /dev/null &<cr>
+nnoremap <leader>r :terminal yarn dev<cr>
+
+tnoremap <Esc> <C-\><C-n>
+au TermOpen * setlocal nonumber
+au TermOpen * setlocal norelativenumber
+highlight TermCursor ctermfg=red guifg=red
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+
+tnoremap <A-h> <C-\><C-N><C-w>h
+tnoremap <A-j> <C-\><C-N><C-w>j
+tnoremap <A-k> <C-\><C-N><C-w>k
+tnoremap <A-l> <C-\><C-N><C-w>l
+inoremap <A-h> <C-\><C-N><C-w>h
+inoremap <A-j> <C-\><C-N><C-w>j
+inoremap <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
 
 inoremap jk <ESC>
 
@@ -109,19 +130,19 @@ let g:ale_sign_column_always = 1
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '-'
 
-set conceallevel=1
-
-let g:javascript_conceal_function             = "ƒ"
-let g:javascript_conceal_null                 = "ø"
-let g:javascript_conceal_this                 = "@"
-let g:javascript_conceal_return               = "↲"
-let g:javascript_conceal_undefined            = "¿"
-let g:javascript_conceal_NaN                  = "ℕ"
-let g:javascript_conceal_prototype            = "¶"
-let g:javascript_conceal_static               = "•"
-let g:javascript_conceal_super                = "Ω"
+" set conceallevel=1
+" 
+" let g:javascript_conceal_function             = "ƒ"
+" let g:javascript_conceal_null                 = "ø"
+" let g:javascript_conceal_this                 = "@"
+" let g:javascript_conceal_return               = "↲"
+" let g:javascript_conceal_undefined            = "¿"
+" let g:javascript_conceal_NaN                  = "ℕ"
+" let g:javascript_conceal_prototype            = "¶"
+" let g:javascript_conceal_static               = "•"
+" let g:javascript_conceal_super                = "Ω"
 " let g:javascript_conceal_arrow_function     = "⇒"
-let g:javascript_conceal_noarg_arrow_function = "🞅"
+" let g:javascript_conceal_noarg_arrow_function = "🞅"
 
 " Easy motion mapings
 nmap s <Plug>(easymotion-s)
@@ -144,7 +165,7 @@ set mouse=a
 
 set autochdir
 let NERDTreeChDirMode=2
-let g:NERDTreeWinSize=40
+let g:NERDTreeWinSize=35
 let g:NERDTreeDirArrows=1
 let g:NERDTreeDirArrowExpandable='▸'
 let g:NERDTreeDirArrowCollapsible='▾'
@@ -171,8 +192,13 @@ set pastetoggle=<F2>
 
 au BufWinEnter * normal zR
 
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprevious<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+tnoremap <Tab> <C-\><C-n>:bnext<CR>
+tnoremap <S-Tab> <C-\><C-n>:bprevious<CR>
+
+autocmd FileType nerdtree nnoremap <buffer> <Tab> <nop>
+autocmd FileType nerdtree nnoremap <buffer> <S-Tab> <nop>
 
 "nnoremap <silent> <C-S>          :update<CR>
 "vnoremap <silent> <C-S>         <C-C>:update<CR>
