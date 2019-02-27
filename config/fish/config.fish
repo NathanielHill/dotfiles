@@ -8,7 +8,6 @@ source $OMF_PATH/init.fish
 
 set fish_color_autosuggestion yellow
 
-set -x PROJECT_HOME ~/Projects/
 set -x EDITOR vim
 
 set fish_greeting ""
