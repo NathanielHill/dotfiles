@@ -1,6 +1,0 @@
-jedi
-powerline-status
-virtualfish
-youtube-dl
-opml
-feedparser
