@@ -88,6 +88,7 @@ in {
       python3
       lsof
       pulseaudioFull
+      irssi
       unstable.discord
       unstable.slack
       unstable.zoom-us
