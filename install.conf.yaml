@@ -7,13 +7,11 @@
 
 - link:
     ~/.config/inkscape/icons/icons.svg: config/inkscape/icons/icons.svg
-    ~/.config/fish/completions: config/fish/completions/
-    ~/.config/fish/config.fish: config/fish/config.fish
-    ~/.config/fish/functions: config/fish/functions/
     ~/.config/Code/User/settings.json: vscode.json
     ~/.config/powerline: config/powerline/
     ~/.bash_profile: bash_profile
     ~/.config/nvim: config/nvim/
+    ~/.config/fish: config/fish/
     ~/.bash_logout: bash_logout
     ~/.local/scripts: scripts/
     ~/.latexmkrc: latexmkrc
