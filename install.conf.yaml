@@ -6,8 +6,6 @@
 - clean: ['~']
 
 - link:
-    ~/.dotfiles: ''
-
     ~/.config/fish/completions: config/fish/completions/
     ~/.config/fish/functions: config/fish/functions/
     ~/.config/powerline: config/powerline/
