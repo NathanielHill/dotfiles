@@ -6,19 +6,16 @@
 - clean: ['~']
 
 - link:
-    ~/.config/fish/completions: config/fish/completions/
-    ~/.config/fish/functions: config/fish/functions/
-    ~/.config/powerline: config/powerline/
-    ~/.config/nvim: config/nvim/
-    ~/.local/scripts: scripts/
-    ~/.fonts: fonts/
-    ~/.vim: vim/
-
     ~/.config/inkscape/icons/icons.svg: config/inkscape/icons/icons.svg
+    ~/.config/fish/completions: config/fish/completions/
     ~/.config/fish/config.fish: config/fish/config.fish
+    ~/.config/fish/functions: config/fish/functions/
     ~/.config/Code/User/settings.json: vscode.json
+    ~/.config/powerline: config/powerline/
     ~/.bash_profile: bash_profile
+    ~/.config/nvim: config/nvim/
     ~/.bash_logout: bash_logout
+    ~/.local/scripts: scripts/
     ~/.latexmkrc: latexmkrc
     ~/.gitconfig: gitconfig
     ~/.gitignore: gitignore
@@ -27,5 +24,7 @@
     ~/.gnuplot: gnuplot
     ~/.inputrc: inputrc
     ~/.bashrc: bashrc
+    ~/.fonts: fonts/
     ~/.toprc: toprc
     ~/.vimrc: vimrc
+    ~/.vim: vim/
