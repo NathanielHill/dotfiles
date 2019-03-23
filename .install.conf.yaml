@@ -29,6 +29,3 @@
     ~/.bashrc: bashrc
     ~/.toprc: toprc
     ~/.vimrc: vimrc
-
-- shell:
-   - [git submodule update --init --recursive, Updating submodules... ]
