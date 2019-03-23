@@ -97,6 +97,7 @@ in {
       unstable.hyper
       unstable.nodejs-8_x
       unstable.yarn
+      (pkgs.callPackage ./now-cli.nix {})
   ];
 
   # Enable the OpenSSH daemon.
