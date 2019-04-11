@@ -24,8 +24,6 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "plexus"; # Define your hostname.
-
   fonts.fonts = with pkgs; [
       noto-fonts
       noto-fonts-cjk
@@ -90,6 +88,17 @@ in {
       lsof
       pulseaudioFull
       irssi
+      pulsemixer
+      zathura
+      feh
+      scrot
+      mpd
+      mpc_cli
+      ncmpcpp
+      mpv
+      newsboat
+      parted
+      gparted
       unstable.discord
       unstable.slack
       unstable.zoom-us
@@ -101,14 +110,65 @@ in {
       (pkgs.callPackage ./now-cli.nix {})
   ];
 
+  programs.light.enable = true;
+
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  #services.openssh.forwardX11 = true;
+  #programs.ssh.forwardX11 = true;
+  #programs.ssh.setXAuthLocation = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  services.mpd = {
+    enable = true;
+    musicDirectory = "/Music";
+    playlistDirectory = "/Music/playlists";
+    dataDir = "/Music/.mpd";
+
+    extraConfig = ''
+      audio_output {
+        type "pulse"
+        name "PulseAudio"
+      }
+    '';
+  };
+
+  boot.kernel.sysctl = {
+    "net.ipv4.conf.all.forwarding" = 1;
+    "net.ipv4.conf.default.forwarding" = 1;
+    "net.ipv4.conf.eno1.route_localnet" = 1;
+  };
+
+  networking.hostName = "plexus"; # Define your hostname.
+  networking.nameservers = [ "1.1.1.1" "1.0.0.1" "8.8.8.8" "8.8.4.4" ];
+
+  networking.nat = {
+    enable = true;
+    internalIPs = [ "127.0.0.1" ];
+    internalInterfaces = [ "lo" ];
+    externalInterface = "eno1";
+    forwardPorts = [
+      {
+        sourcePort = 80;
+        destination = "127.0.0.1:3000";
+      }
+    ];
+  };
+
+  networking.firewall = {
+    enable = true;
+    allowPing = true;
+    trustedInterfaces = [ "lo" ];
+
+    # Open ports in the firewall.
+    allowedTCPPorts = [
+      22
+      80
+      3000
+      5000
+    ];
+
+    # allowedUDPPorts = [ ... ];
+  };
 
   # Enable sound.
   sound.enable = true;
@@ -147,7 +207,7 @@ in {
     shell = pkgs.fish;
     home = "/home/nhill";
     description = "Nathaniel Hill";
-    extraGroups = [ "wheel" "audio" ];
+    extraGroups = [ "wheel" "audio" "mpd" "video" ];
     uid = 1000;
   };
 
