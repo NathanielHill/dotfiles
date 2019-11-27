@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+Discord &
+
+slack &
+
+skypeforlinux &
+
+zoom-us &
+
+telegram-desktop &
+
+run_keybase &

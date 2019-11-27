@@ -75,7 +75,6 @@ in {
       curl
       fdupes
       whois
-      youtube-dl
       gimp
       audacity
       sox
@@ -84,7 +83,6 @@ in {
       obs-studio
       traceroute
       bind
-      python3
       lsof
       pulseaudioFull
       irssi
@@ -99,18 +97,67 @@ in {
       newsboat
       parted
       gparted
+      neomutt
+      pass
+      sdcv
+      mtools
+      unrar
+      binutils-unwrapped
+      patchelf
+      jmtpfs
+      unzip
+      shellcheck
+      dash
+      mksh
+      zsh
+      lf
+      vifm
+      w3m
+      transmission
+      exiftool
+      kid3
+      skanlite
+      imagemagick7Big
+      tree
+      abiword
+      go-sct
+      pavucontrol
+      sxiv
+      zip
+      gnuplot
+      dropbox
+      dropbox-cli
+      sloc
+      paprefs
+      unstable.kjv
+      unstable.nodejs
+      unstable.yarn
+      unstable.tdesktop
+      unstable.kbfs
+      unstable.keybase
+      unstable.keybase-gui
+      unstable.chromium
+      unstable.rclone
+      unstable.python37Packages.youtube-dl
       unstable.discord
       unstable.slack
       unstable.zoom-us
       unstable.google-chrome
       unstable.vscode
       unstable.hyper
-      unstable.nodejs-8_x
-      unstable.yarn
+      unstable.skypeforlinux
       (pkgs.callPackage ./now-cli.nix {})
+      (python36Full.withPackages(
+            ps: with ps;
+            [ setuptools ]
+      ))
   ];
 
   programs.light.enable = true;
+
+  services.printing.enable = true;
+  services.printing.drivers = [ pkgs.gutenprint ];
+  hardware.sane.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -120,16 +167,19 @@ in {
 
   services.mpd = {
     enable = true;
-    musicDirectory = "/Music";
-    playlistDirectory = "/Music/playlists";
-    dataDir = "/Music/.mpd";
+    musicDirectory = "/home/nhill/Dropbox/Music";
+    playlistDirectory = "/home/nhill/Dropbox/Music/playlists";
+    dataDir = "/home/mpd/.mpd";
+
+    # user = "nhill";
+    group = "users";
 
     extraConfig = ''
       audio_output {
         type "pulse"
-        name "PulseAudio"
+        name "pulse audio"
       }
-    '';
+      '';
   };
 
   boot.kernel.sysctl = {
@@ -172,8 +222,10 @@ in {
 
   # Enable sound.
   sound.enable = true;
-  boot.extraModprobeConfig = "options snd-hda-intel id=SB index=0";
+  #boot.extraModprobeConfig = "options snd-hda-intel id=SB index=0";
+  boot.extraModprobeConfig = "options snd-hda-intel enable=0";
   hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.systemWide = true;
 
   # This is a work-around for i3blocks
   environment.pathsToLink = [ "/libexec" ];
@@ -199,6 +251,18 @@ in {
         i3blocks
       ];
     };
+
+    xrandrHeads = [
+      {
+        output = "DP1";
+        monitorConfig = ''
+          Option "LeftOf" "DP2"
+        '';
+      }
+      {
+        output = "DP2";
+      }
+    ];
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -207,7 +271,7 @@ in {
     shell = pkgs.fish;
     home = "/home/nhill";
     description = "Nathaniel Hill";
-    extraGroups = [ "wheel" "audio" "mpd" "video" ];
+    extraGroups = [ "wheel" "audio" "mpd" "video" "lp" "scanner" ];
     uid = 1000;
   };
 
@@ -216,5 +280,32 @@ in {
   # servers. You should change this only after NixOS release notes say you
   # should.
   system.stateVersion = "18.09"; # Did you read the comment?
+
+
+  fileSystems."/mnt/CarPod" = {
+
+    device = "/dev/disk/by-uuid/585A-0F57";
+    options = [ "nofail,user,umask=0000" ];
+
+  };
+
+  fileSystems."/mnt/SpeakerPod" = {
+
+    device = "/dev/disk/by-uuid/DC0E-40AC";
+    options = [ "nofail,user,umask=0000" ];
+
+  };
+
+  fileSystems."/Backup" = {
+
+    device = "/dev/disk/by-uuid/9726f2a0-8eca-430c-a2d4-85b243f7e947";
+    options = [ "nofail,user" ];
+  };
+
+  fileSystems."/home/nhill/Dropbox" = {
+
+    device = "/dev/disk/by-uuid/a7045a85-86a3-4848-890e-1079b6071ab3";
+    options = [ "nofail,user" ];
+  };
 
 }

@@ -1,0 +1,60 @@
+#!/usr/bin/env sh
+
+if [ "$(echo $@)" = "rerun" ]; then
+	RERUN=true
+else
+	RERUN=false
+fi
+
+if [ "$RERUN" = true ]; then
+	echo ""
+else
+	echo "Backing up ~Dropbox/ to /Backup/"
+	echo "================================"
+fi
+
+# Currently assumes backup disk is mounted
+# Need to add a mount check and error out if unmounted
+# Should probably check by running mount and
+# then unmount if backup is successful
+
+if mountpoint -q /Backup/; then
+  if [ "$RERUN" != true ]; then
+    echo ""
+  fi
+	if rsync -a --info=progress2 --delete /home/nhill/Dropbox/ /Backup/; then
+		if sudo umount /Backup/; then
+			echo ""
+			echo "Successfully backed up and unmounted!"
+      exit 0
+		else
+			echo ""
+			echo "Error unmounting backup drive!"
+      exit 1
+		fi
+	else
+		echo ""
+		echo "Error backing up!"
+    exit 1
+	fi
+else
+	echo ""
+	echo "Backup disk unmounted, attempting to mount..."
+	if sudo mount /Backup/; then
+		# mount seems to exit with status code 0 regardless
+		# of dailure or success, so do our own check
+		if mountpoint -q /Backup/; then
+			$(which dropback) rerun
+		else
+			echo ""
+			echo "Could not mount backup drive!"
+			exit 1
+		fi
+	else
+		echo ""
+		echo "Could not mount backup drive!"
+		exit 1
+	fi
+fi
+
+exit 0

@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+echo "~Dropbox/ contains:"
+echo "==================="
+echo ""
+
+printf "$(du -cd 1 -BG /home/nhill/Dropbox | tail -1 | cut -f1 | \
+  sed -e "s/.$//")\tGigabytes\n"
+echo ""
+
+printf "$(find /home/nhill/Dropbox -type f | wc -l)\tfiles\n"
+echo ""
+
+printf "$(find /home/nhill/Dropbox -type d | wc -l)\tfolders\n"
+echo ""
+
+printf "$(find /home/nhill/Dropbox | wc -l)\tinodes\n"
+echo ""
+
+echo "$(du -d 1 -BG /home/nhill/Dropbox | grep -v lost+found | head -n -1 | sort -n | \
+  sed -e "s/\/MEGA\///")"
+

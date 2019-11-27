@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+ffmpeg -i "$1" -c:a copy \
+  -metadata Artist=$2 \
+  -metadata Title=$3 \
+  -metadata Year=$4 \
+  -metadata Album=$5 \
+  temp.mp3
+
+rm $1
+mv temp.mp3 $1

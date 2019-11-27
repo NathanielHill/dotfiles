@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+echo "Syncing ~Dropbox/"
+echo "================="
+echo ""
+
+# Exclude personal folders to avoid clobbering them for now
+# Exclude NSFW for now
+
+rclone -P sync \
+  --max-backlog=500000 \
+  --exclude "/Nathaniel Hill/" \
+  --exclude "/Kadi Hill/" \
+  --exclude "/NSFW/" \
+  /home/nhill/Dropbox/ Dropbox_Nata:/

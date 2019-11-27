@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+keybase service &
+
+sleep 2
+
+kbfsfuse &
+
+sleep 2
+
+keybase-gui &
