@@ -129,6 +129,7 @@ in {
       dropbox-cli
       sloc
       paprefs
+      neofetch
       unstable.kjv
       unstable.nodejs
       unstable.yarn
