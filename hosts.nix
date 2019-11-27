@@ -3,6 +3,11 @@
 {
   networking.extraHosts = ''
 
+#0.0.0.0 youtube.com
+#0.0.0.0 www.youtube.com
+#0.0.0.0 youtu.be
+#0.0.0.0 www.youtu.be
+
 # Hosts contributed by Steven Black
 # http://stevenblack.com
 0.0.0.0 1493361689.rsc.cdn77.org
