@@ -695,9 +695,9 @@
 0.0.0.0 pr-bh.ybp.yahoo.com
 
 # Error tracking and crash reporting
-0.0.0.0 rollbar.com
-0.0.0.0 www.rollbar.com
-0.0.0.0 api.rollbar.com
+#0.0.0.0 rollbar.com
+#0.0.0.0 www.rollbar.com
+#0.0.0.0 api.rollbar.com
 
 0.0.0.0 ads.exoclick.com
 0.0.0.0 secure.exoclick.com
@@ -5380,7 +5380,6 @@
 0.0.0.0 gd7.doubleclick.net
 0.0.0.0 gd8.doubleclick.net
 0.0.0.0 gd9.doubleclick.net
-0.0.0.0 googleads.g.doubleclick.net
 0.0.0.0 iv.doubleclick.net
 0.0.0.0 ln.doubleclick.net
 0.0.0.0 m1.2mdn.net
@@ -5605,8 +5604,6 @@
 0.0.0.0 pagead.l.doubleclick.net
 #0.0.0.0 pubads.g.doubleclick.net	#interferes with video on cwtv.com
 0.0.0.0 rd.intl.doubleclick.net
-0.0.0.0 stats.g.doubleclick.net
-0.0.0.0 stats.l.doubleclick.net
 0.0.0.0 twx.2mdn.net
 0.0.0.0 twx.doubleclick.net
 0.0.0.0 ukrpts.net
@@ -10338,7 +10335,6 @@
 0.0.0.0 fdimages.fairfax.com.au
 0.0.0.0 federaldata.io
 0.0.0.0 feed.4wnet.com
-0.0.0.0 feedads.googleadservices.com
 0.0.0.0 feedbackcensus.com
 0.0.0.0 feeds.videosz.com
 0.0.0.0 feeds.weselltraffic.com
@@ -11317,7 +11313,6 @@
 0.0.0.0 m2.media-box.co
 0.0.0.0 m2.sexgarantie.nl
 0.0.0.0 m3.2mdn.net
-0.0.0.0 m4.afs.googleadservices.com
 0.0.0.0 m4.media-box.co
 0.0.0.0 m4ymh0220.tech
 0.0.0.0 maaxmarket.com
@@ -11515,16 +11510,6 @@
 0.0.0.0 mightymagoo.com
 0.0.0.0 mii-image.adjuggler.com
 0.0.0.0 milyondolar.com
-0.0.0.0 mimageads1.googleadservices.com
-0.0.0.0 mimageads2.googleadservices.com
-0.0.0.0 mimageads3.googleadservices.com
-0.0.0.0 mimageads4.googleadservices.com
-0.0.0.0 mimageads5.googleadservices.com
-0.0.0.0 mimageads6.googleadservices.com
-0.0.0.0 mimageads7.googleadservices.com
-0.0.0.0 mimageads8.googleadservices.com
-0.0.0.0 mimageads9.googleadservices.com
-0.0.0.0 mimageads.googleadservices.com
 0.0.0.0 mimicrice.com
 0.0.0.0 mindenbenegyblog.hu
 0.0.0.0 mindenegybenblog.hu
@@ -11587,7 +11572,6 @@
 0.0.0.0 movsflix.com
 0.0.0.0 mozebyctwoje.com
 0.0.0.0 mp3playersource.com
-0.0.0.0 mpartner.googleadservices.com
 0.0.0.0 m.pl.pornzone.tv
 0.0.0.0 mp.tscapeplay.com
 0.0.0.0 mpv.sandai.net
@@ -12917,7 +12901,6 @@
 0.0.0.0 static.creatives.livejasmin.com
 0.0.0.0 static.criteo.net
 0.0.0.0 staticd.cdn.adblade.com
-0.0.0.0 static.doubleclick.net
 0.0.0.0 static.eu.criteo.net
 0.0.0.0 static.everyone.net
 0.0.0.0 static.exoclick.com
@@ -14261,7 +14244,6 @@
 0.0.0.0 www.go-free-gifts.com
 0.0.0.0 www.gofreegifts.com
 0.0.0.0 www.goody-garage.com
-0.0.0.0 www.googleadservices.com
 0.0.0.0 www.googlewordpad.info
 0.0.0.0 www.googmel.win
 0.0.0.0 www.gopopup.com
@@ -14477,7 +14459,6 @@
 0.0.0.0 www.optiad.net
 0.0.0.0 www.paperg.com
 0.0.0.0 www.parsads.com
-0.0.0.0 www.partner.googleadservices.com
 0.0.0.0 www.partycasino.com
 0.0.0.0 www.pathforpoints.com
 0.0.0.0 www.paypopup.com
@@ -22038,7 +22019,6 @@
 0.0.0.0 8482194.fls.doubleclick.net
 0.0.0.0 8563004.fls.doubleclick.net
 0.0.0.0 adx.g.doubleclick.net
-0.0.0.0 googleads4.g.doubleclick.net
 0.0.0.0 partnerad.l.doubleclick.net
 0.0.0.0 undefined.fls.doubleclick.net
 0.0.0.0 pagead-googlehosted.l.google.com
@@ -22114,7 +22094,6 @@
 # 0.0.0.0  static.2mdn.net #[affects Youtube]
 0.0.0.0 ad-apac.doubleclick.net
 0.0.0.0 gan.doubleclick.net
-0.0.0.0 googleads2.g.doubleclick.net
 0.0.0.0 n4061ad.hk.doubleclick.net
 0.0.0.0 securepubads.g.doubleclick.net
 # [Google / DoubleClick][AS15169][74.125.0.0 - 74.125.255.255]
@@ -22128,13 +22107,6 @@
 0.0.0.0 4684100.fls.doubleclick.net
 0.0.0.0 fls.au.doubleclick.net
 0.0.0.0 www.doubleclickbygoogle.com
-0.0.0.0 google-analytics.com
-0.0.0.0 ssl.google-analytics.com
-0.0.0.0 www.google-analytics.com  #[affects Google Trends]
-0.0.0.0 4.afs.googleadservices.com
-0.0.0.0 pagead2.googleadservices.com
-0.0.0.0 partner.googleadservices.com
-0.0.0.0 domains.googlesyndication.com  #[Parking Service]
 0.0.0.0 www.linksalpha.com
 # [Gossamer][AS36483][172.255.48.0 - 172.255.63.255]
 # [Gossamer][AS36483][208.70.244.0 - 208.70.247.255]
@@ -28864,7 +28836,7 @@
 0.0.0.0 amung.us
 0.0.0.0 anahtars.com
 0.0.0.0 analytics.adpost.org
-0.0.0.0 analytics.google.com
+#0.0.0.0 analytics.google.com
 0.0.0.0 analytics.yahoo.com
 0.0.0.0 anrdoezrs.net
 0.0.0.0 anxiousapples.com
@@ -29400,7 +29372,6 @@
 0.0.0.0 go2affise.com
 0.0.0.0 goingplatinum.com
 0.0.0.0 gondolagnome.com
-0.0.0.0 googleadservices.com
 0.0.0.0 googlesyndication.com
 0.0.0.0 gorgeousground.com
 0.0.0.0 gossipmiser.com
