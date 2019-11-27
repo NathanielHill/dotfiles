@@ -159,7 +159,7 @@ let g:solarized_contrast="high"
 
 set background=dark
 
-colorscheme solarized
+" colorscheme solarized
 
 set mouse=a
 
