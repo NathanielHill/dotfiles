@@ -1,8 +1,49 @@
-[core]
-editor = nvim
-excludesfile = ~/.gitignore
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [user]
-name = Nathaniel Hill
-email = nata@goguna.com
+	name = Nathaniel Hill
+	email = nathaniel@surfboard.team
+[pull]
+	ff = only
+	default = current
 [push]
-default = simple
+	default = current
+	autoSetupRemote = true
+[init]
+	defaultBranch = master
+
+[core]
+	pager = /opt/homebrew/var/homebrew/linked/git/share/git-core/contrib/diff-highlight/diff-highlight | less
+
+[color]
+	ui = always
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+[color "diff"]
+	commit = green
+	meta = yellow
+	frag = cyan
+	old = red
+	new = green
+	whitespace = red reverse
+[commit]
+	gpgsign = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[rerere]
+	enabled = true
+[maintenance]
+	repo = /Users/nhill/Surfboard/frontend
+	repo = /Users/nhill/Surfboard/backend
+[fetch]
+	writeCommitGraph = true
